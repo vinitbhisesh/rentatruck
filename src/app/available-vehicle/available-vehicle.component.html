@@ -1,0 +1,304 @@
+<div class="dashbContentFlexH position-relative">
+
+    <div class="bodyBgGradColor"></div>
+
+    <div class="container-fluid">
+
+        <div class="contentAreaBox">
+            <div class="form-row">
+                <div class="col-sm-11 col-md-11 col-lg-11">
+                    <div class="searchBoxSty mb-2">
+                        <input type="text" placeholder="Search..">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1">
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#availabelVehicle_id">Add</button>
+                </div>
+            </div>
+
+            <div class="detailsScrollBarV">
+                <div class="cardSty availabelVehicleCardSty" [ngClass]="status ? 'open' : 'closeB'">
+
+                    <div class="mainList">
+                        <div class="d-flex d-flex justify-content-between align-items-center parentAL">
+                            <div>
+                                <div class="d-flex availabelVehicleFSty">
+                                    <div class="lblSpanSty">
+                                        <span class="pl-0">Pune to Kolhapur</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Vehicle Number: </label>
+                                        <span>MH12 AB 1111</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Date: </label>
+                                        <span>18/09/2019</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Time: </label>
+                                        <span>11:40 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="btnIconStyDetails">
+                                    <div>
+                                        <div class="countStyAV"><p>2</p></div>
+                                        <button type="button" class="btn btn-sm btn-outline-primary mr-2"><i class="fas fa-plus"></i></button>
+                                        <button type="button" class="btn btn-sm btn-outline-info mr-2"><i class="fas fa-pen"></i></button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger mr-2"><i class="fas fa-trash-alt"></i></button>
+                                        <button (click)="clickEvent()" class="btn btn-sm btn-outline-primary buttonArrowAV"><i class="fas fa-angle-down"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="subListAV">
+                            <li>
+                                <div class="d-flex d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="d-flex availabelVehicleFSty">
+                                            <div class="lblSpanSty">
+                                                <span class="pl-0">Pune to Kolhapur</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Vehicle Number: </label>
+                                                <span>MH12 AB 1111</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Date: </label>
+                                                <span>18/09/2019</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Time: </label>
+                                                <span>11:40 AM</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btnIconStyDetails">
+                                            <div>
+                                                <button type="button" class="btn btn-sm btn-outline-info mr-2"><i
+                                                        class="fas fa-pen"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="d-flex availabelVehicleFSty">
+                                            <div class="lblSpanSty">
+                                                <span class="pl-0">Pune to Kolhapur</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Vehicle Number: </label>
+                                                <span>MH12 AB 1111</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Date: </label>
+                                                <span>18/09/2019</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Time: </label>
+                                                <span>11:40 AM</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="btnIconStyDetails">
+                                            <div>
+                                                <button type="button" class="btn btn-sm btn-outline-info mr-2"><i
+                                                        class="fas fa-pen"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="availabelVehicle_id" tabindex="-1" role="dialog" aria-labelledby="availabelVehicle_idTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="availabelVehicle_idTitle">Available Vehicle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+
+                    <form>
+                        <div>
+                            <div class="form-group">
+                                <label for="vehicleNumber_id">Vehicle Number</label>
+                                <input type="text" class="form-control" id="vehicleNumber_id"
+                                    placeholder="Vehicle number" />
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label>Trip Type</label>
+                                        <div class="d-flex justify-content-start">
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                                <input type="radio" class="custom-control-input" name="tripType"
+                                                    id="oneTime_id">
+                                                <label class="custom-control-label" for="oneTime_id">One Time</label>
+                                            </div>
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                                <input type="radio" class="custom-control-input" name="tripType"
+                                                    id="recurringTT_id">
+                                                <label class="custom-control-label" for="recurringTT_id">Recurring</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label>Load Status</label>
+                                        <div class="d-flex justify-content-start">
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                                <input type="radio" class="custom-control-input" name="lsFullPartial" id="lsFull_id">
+                                                <label class="custom-control-label" for="lsFull_id">Full</label>
+                                            </div>
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                                <input type="radio" class="custom-control-input" name="lsFullPartial"
+                                                    id="lsPartial_id">
+                                                <label class="custom-control-label" for="lsPartial_id">Partial</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+     
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="bookingAV_id">Start Date</label>
+                                        <input type="date" class="form-control" id="bookingAV_id" placeholder="dd/mm/yyyy" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="endDate_id">End Date</label>
+                                        <input type="date" class="form-control" id="endDate_id" placeholder="dd/mm/yyyy" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="timeAV_id">Time</label>
+                                        <input type="text" class="form-control" id="timeAV_id" placeholder="00:00 AM" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                                <div class="d-flex flex-column flex-md-row flex-lg-row align-items-center justify-content-between mb-3">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="allDaysCheck">
+                                        <label class="custom-control-label" for="allDaysCheck">All Days</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="monCheck">
+                                        <label class="custom-control-label" for="monCheck">Mon</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="tueCheck">
+                                        <label class="custom-control-label" for="tueCheck">Tue</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="wedCheck">
+                                        <label class="custom-control-label" for="wedCheck">Wed</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="thuCheck">
+                                        <label class="custom-control-label" for="thuCheck">Thu</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="friCheck">
+                                        <label class="custom-control-label" for="friCheck">Fri</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="satCheck">
+                                        <label class="custom-control-label" for="satCheck">Sat</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="sunCheck">
+                                        <label class="custom-control-label" for="sunCheck">Sun</label>
+                                    </div>
+                            </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="bookingAV_id">Date</label>
+                                        <input type="text" class="form-control" id="bookingAV_id"
+                                            placeholder="dd/mm/yyyy" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="timeAV_id">Time</label>
+                                        <input type="text" class="form-control" id="timeAV_id" placeholder="00:00 AM" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="fromAV_id">From</label>
+                                        <input type="text" class="form-control" id="fromAV_id" placeholder="Pune" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="toAV_id">To</label>
+                                        <input type="text" class="form-control" id="toAV_id" placeholder="Kolhapur" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="availableLoadTon_id">Available Load (Ton)</label>
+                                <input type="text" class="form-control" id="availableLoadTon_id" placeholder="Available Load (Ton)" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,413 @@
+<div class="dashbContentFlexH position-relative">
+
+    <div class="bodyBgGradColor"></div>
+
+    <div class="container-fluid">
+
+        <div class="contentAreaBox">
+            <div class="form-row">
+                <div class="col-sm-11 col-md-11 col-lg-11">
+                    <div class="searchBoxSty mb-2">
+                        <input type="text" placeholder="Search..">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1">
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+                        data-target="#sendmaterial_id">Send</button>
+                </div>
+            </div>
+
+        <div class="card mt-2 mb-3 border border-danger text-center d-none">
+            <div class="card-body">
+                <h5 class="card-title">Sorry no result found</h5>
+                <p class="card-text">Would you like post your load?</p>
+                <button type="button" class="btn btn-secondary mr-2">No</button>
+                <button type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+
+
+
+            <div class="detailsScrollBarV">
+                <div class="cardSty availabelVehicleCardSty" [ngClass]="status ? 'open' : 'closeB'">
+
+                    <div class="mainList">
+                        <div class="d-flex d-flex justify-content-between align-items-center parentAL">
+                            <div>
+                                <div class="d-flex availabelVehicleFSty">
+                                    <div class="lblSpanSty">
+                                        <span class="ml-0">Pune to Kolhapur</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Date: </label>
+                                        <span>18/09/2019</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Time: </label>
+                                        <span>11:40 AM</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Type: </label>
+                                        <span>Tata SFC 709 EX</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Load: </label>
+                                        <span>2 Ton</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Status: </label>
+                                        <span>Partial</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="btnIconStyDetails">
+                                    <div>
+                                        <div class="d-inline-block my-1">
+                                            <div class="custom-control custom-checkbox mr-sm-2">
+                                                <input type="checkbox" class="custom-control-input"
+                                                    id="customControlAutosizing">
+                                                <label class="custom-control-label"
+                                                    for="customControlAutosizing"></label>
+                                            </div>
+                                        </div>
+                                        <button (click)="clickEvent()"
+                                            class="btn btn-sm btn-outline-primary buttonArrowAV"><i
+                                                class="fas fa-angle-down"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="subListAV">
+                            <li class="border-0 mb-3">
+                                <div class="d-flex d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="d-flex availabelVehicleFSty">
+                                            <div class="lblSpanSty">
+                                                <label>Distance: </label>
+                                                <span>220km</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Rate: </label>
+                                                <span>50</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Quotation Amount: </label>
+                                                <span>10,000</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Name: </label>
+                                                <span>Transporter</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="border-0 mb-0">
+                                <div class="d-flex d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="btnIconStyDetails">
+                                            <div>
+                                                <button type="button" class="btn btn-sm btn-outline-primary mr-2"><i
+                                                        class="fas fa-phone-alt"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary mr-2"><i
+                                                        class="fab fa-whatsapp"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary mr-2"><i
+                                                        class="far fa-envelope"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#requestForBooking">Request for Booking</button>
+                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#requestForQuotation">Request for Quotation</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="sendmaterial_id" tabindex="-1" role="dialog" aria-labelledby="sendmaterial_idTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sendmaterial_idTitle">Send Material</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="position-relative d-flex justify-content-between">
+                        <div class="bordStyPos"></div>
+
+                        <div class="truckAvailableRangM">
+                            <div class="countTxt" [ngClass]="truckAI ? 'activeTruck' : 'inactiveTruck'">150</div>
+                            <div (click)="clickEvtTruck()">
+                                <div>
+                                    <div class="rangeImgSM">
+                                        <img src="assets/img/tataAceActive.png" alt="">
+                                    </div>
+                                    <div class="rangeTitleSM">Tata Ace</div>
+                                    <div class="rangeDotSM activeDot"></div>
+                                    <div class="cityNameTxtSM">Pune</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="truckAvailableRangM">
+                            <div class="countTxt" [ngClass]="truckAI ? 'activeTruck' : 'inactiveTruck'">80</div>
+                            <div (click)="clickEvtTruck()">
+                                <div>
+                                    <div class="rangeImgSM">
+                                        <img src="assets/img/tataAceActive.png" alt="">
+                                    </div>
+                                    <div class="rangeTitleSM">Ganpati</div>
+                                    <div class="rangeDotSM inActiveDot"></div>
+                                    <div class="cityNameTxtSM">Mumbai</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="truckAvailableRangM">
+                            <div class="countTxt" [ngClass]="truckAI ? 'activeTruck' : 'inactiveTruck'">30</div>
+                            <div (click)="clickEvtTruck()">
+                                <div>
+                                    <div class="rangeImgSM">
+                                        <img src="assets/img/tataAceActive.png" alt="">
+                                    </div>
+                                    <div class="rangeTitleSM">tata 407</div>
+                                    <div class="rangeDotSM inActiveDot"></div>
+                                    <div class="cityNameTxtSM">Kolhapur</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="truckAvailableRangM">
+                            <div class="countTxt" [ngClass]="truckAI ? 'activeTruck' : 'inactiveTruck'">90</div>
+                            <div (click)="clickEvtTruck()">
+                                <div>
+                                    <div class="rangeImgSM">
+                                        <img src="assets/img/tataAceOpenAct.png" alt="">
+                                    </div>
+                                    <div class="rangeTitleSM">tata ace open</div>
+                                    <div class="rangeDotSM inActiveDot"></div>
+                                    <div class="cityNameTxtSM">Satara</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="truckAvailableRangM">
+                            <div class="countTxt" [ngClass]="truckAI ? 'activeTruck' : 'inactiveTruck'">40</div>
+                            <div (click)="clickEvtTruck()">
+                                <div>
+                                    <div class="rangeImgSM">
+                                        <img src="assets/img/pickup8ftActive.png" alt="">
+                                    </div>
+                                    <div class="rangeTitleSM">pickup 8ft</div>
+                                    <div class="rangeDotSM inActiveDot"></div>
+                                    <div class="cityNameTxtSM">Nagpur</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="truckAvailableRangM">
+                            <div class="countTxt" [ngClass]="truckAI ? 'activeTruck' : 'inactiveTruck'">100</div>
+                            <div (click)="clickEvtTruck()">
+                                <div>
+                                    <div class="rangeImgSM">
+                                        <img src="assets/img/pickup8ftOpenActive.png" alt="">
+                                    </div>
+                                    <div class="rangeTitleSM">pickup 8ft open</div>
+                                    <div class="rangeDotSM inActiveDot"></div>
+                                    <div class="cityNameTxtSM">Nashik</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div>
+                    <form>
+                        <div class="vertiScrollBar">
+
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="fromAV_id">From</label>
+                                        <input type="text" class="form-control" id="fromAV_id" placeholder="Pune" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="toAV_id">To</label>
+                                        <input type="text" class="form-control" id="toAV_id" placeholder="Kolhapur" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="bookingAV_id">Date</label>
+                                        <input type="text" class="form-control" id="bookingAV_id"
+                                            placeholder="dd/mm/yyyy" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="vehicleType_id">Vehicle Type</label>
+                                        <select id="vehicleType_id" class="form-control">
+                                            <option selected>Select Vehicle Type</option>
+                                            <option>Vehicle 1</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label>Load Status</label>
+                                        <div class="d-flex justify-content-start">
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                                <input type="radio" class="custom-control-input" name="lsFullPartial"
+                                                    id="lsFull_id">
+                                                <label class="custom-control-label" for="lsFull_id">Full</label>
+                                            </div>
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                                <input type="radio" class="custom-control-input" name="lsFullPartial"
+                                                    id="lsPartial_id">
+                                                <label class="custom-control-label" for="lsPartial_id">Partial</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="load_id">Load</label>
+                                        <input type="text" class="form-control" id="load_id" placeholder="load" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer"><button type="button" class="btn btn-primary">Search</button></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Request For Booking Modal Start -->
+<div class="modal fade" id="requestForBooking" tabindex="-1" role="dialog" aria-labelledby="requestForBookingLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="requestForBookingLabel">Request for Booking</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty">
+                        <div class="lblSpanSty">
+                            <span class="ml-0 textBlueColr">Pune to Kolhapur</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Date: </label>
+                            <span>18/09/2019</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Time: </label>
+                            <span>11:40 AM</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty mt-3">
+                        <div class="lblSpanSty">
+                            <label>Type: </label>
+                            <span>Tata SFC 709 EX</span>
+                        </div>
+                    </div>
+                    <div class="textStyRB">Has Requested for booking</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Request For Booking Modal End -->
+
+
+<!-- Request For Quotation Modal Start -->
+<div class="modal fade" id="requestForQuotation" tabindex="-1" role="dialog" aria-labelledby="requestForQuotationLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="requestForQuotationLabel">Request for Quotation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty">
+                        <div class="lblSpanSty">
+                            <span class="ml-0 textBlueColr">Pune to Kolhapur</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Date: </label>
+                            <span>18/09/2019</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Time: </label>
+                            <span>11:40 AM</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty mt-3">
+                        <div class="lblSpanSty">
+                            <label>Type: </label>
+                            <span>Tata SFC 709 EX</span>
+                        </div>
+                    </div>
+                    <div class="textStyRB">Has Requested for Quotation</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Request For Quotation Modal End -->

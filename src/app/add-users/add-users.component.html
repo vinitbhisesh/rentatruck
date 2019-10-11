@@ -1,0 +1,155 @@
+<div class="dashbContentFlexH position-relative">
+
+    <div class="bodyBgGradColor"></div>
+
+    <div class="container-fluid">
+
+        <div class="contentAreaBox">
+            <div class="form-row">
+                <div class="col-sm-11 col-md-11 col-lg-11">
+                    <div class="searchBoxSty mb-2">
+                        <input type="text" placeholder="Search..">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1">
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addUser_id">Add</button>
+                </div>
+            </div>
+
+            <div class="detailsScrollBarV">
+                <div class="cardSty" [ngClass]="status ? 'open' : 'closeB'">
+                    <div class="buttonArrow" (click)="clickEvent()"><i class="fas fa-angle-down"></i></div>
+                    <div>
+                        <div class="d-flex flex-wrap">
+                            <div class="lblSpanSty">
+                                <label>Full Name: </label>
+                                <span>NA</span>
+                            </div>
+                            <div class="lblSpanSty">
+                                <label>Mobile Number: </label>
+                                <span>+91 9604601273</span>
+                            </div>
+                            <div class="lblSpanSty">
+                                <label>Email Id: </label>
+                                <span>abc@gmail.com</span>
+                            </div>
+                            <div class="lblSpanSty">
+                                <label>Gendar: </label>
+                                <span>Male</span>
+                            </div>
+                            <div class="lblSpanSty">
+                                <label>Date Of Birth: </label>
+                                <span>04/06/1992</span>
+                            </div>
+                            <div class="lblSpanSty">
+                                <label>Address: </label>
+                                <span>Pune...</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="d-flex justify-content-end mt-2 btnIconStyDetails">
+                            <div>
+                                <button type="button" class="btn btn-sm btn-outline-info mr-2"><i
+                                        class="fas fa-pen"></i></button>
+                                <button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<nav aria-label="Page navigation">
+    <div class="justify-content-center example d-flex align-items-baseline">
+        <div class="mr-2">Total - 120</div>
+        <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page"><a class="page-link" href="#">2 <span class="sr-only">(current)</span></a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </div>
+</nav>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addUser_id" tabindex="-1" role="dialog" aria-labelledby="addUser_idTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUser_idTitle">Add User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+<div>
+            <form>
+                <div class="vertiScrollBar">
+                    <div class="form-group">
+                        <label for="fullName_id">Full Name</label>
+                        <input type="text" class="form-control" id="fullName_id" placeholder="Full Name" />
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="mobileNumber_id">Mobile Number</label>
+                        <input type="text" class="form-control" id="mobileNumber_id" placeholder="Mobile Number" />
+                    </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="email_id">Email Id</label>
+                                <input type="text" class="form-control" id="email_id"
+                                    placeholder="Email" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>Gendar</label>
+                                <div class="d-flex justify-content-start">
+                                    <div class="form-group custom-control custom-radio my-1 mr-4">
+                                        <input type="radio" class="custom-control-input" name="gendarMF" id="radioMale_id">
+                                        <label class="custom-control-label" for="radioMale_id">Male</label>
+                                    </div>
+                                    <div class="form-group custom-control custom-radio my-1 mr-2">
+                                        <input type="radio" class="custom-control-input" name="gendarMF"
+                                            id="radioFemale_id">
+                                        <label class="custom-control-label" for="radioFemale_id">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="dob_id">Date Of Birth</label>
+                                <input type="date" class="form-control" id="dob_id" placeholder="Chassis Number" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="rdAddress_id">Address</label>
+                        <textarea class="form-control" id="rdAddress_id" rows="2"></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="hedBanner dashHedMain">
+    <div class="container-fluid paddNone-sm">
+        <nav class="navbar navbar-expand-md navbar-expand-lg navbar-inverse bg-inverse m-0 p-0 navBarTR">
+            <a class="navbar-brand dashLogo" href="#"><img src="assets/img/logo.png" class="logoWid-md" alt="logo" /></a>
+            <div class="navbarTogglerBtn">
+                <button class="navbar-toggler" (click)="clickEvent()"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="navbar-collapse justify-content-end navbarCollapseMain" [ngClass]="status ? 'open' : 'closeB'" id="navbarNavDropdown">
+                <div class="navbarCollapseInr">
+                    <ul class="navbar-nav dropdownMenuMain mobileDropdownM">
+                        <li class="nav-item active">
+                            <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register <i class="fas fa-angle-down downRightIconMob"></i></a>
+                            <ul class="subMenus dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="navSubLink dropdown-item" routerLink="/vehicle">Vehicle</a></li>
+                                <li><a class="navSubLink dropdown-item" routerLink="/booking">Booking</a></li>
+                                <li><a class="navSubLink dropdown-item" routerLink="/driver">Driver</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/availablevehicle">Available Vehicle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/sendmaterial">Send Material</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                             <a class="nav-link" routerLink="/searchvehicle"><i class="fas fa-search-location"></i>Search Vehicle</a> 
+                        </li> -->
+                        <li class="nav-item notificationIconBadge d-none d-md-block d-lg-block">
+                            <a class="nav-link"><i class="fas fa-bell"></i> <span class="badge badge-danger">2</span></a>
+                        </li>
+                        <li class="dropdown ml-0 uNameImg">
+                            <a class="nav-link position-relative" id="welcomeUserTxt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Vinit <i class="fas fa-angle-down downRightIconMob"></i> <img src="assets/img/avatar.jpg" class="avtImg" alt="" /></a>
+                            <ul class="subMenus dropdown-menu" aria-labelledby="welcomeUserTxt">
+                                <li><a class="navSubLink" routerLink="/profile">Profile</a></li>
+                                <li><a class="navSubLink" routerLink="/orderTrip">My Orders/Trips</a></li>
+                                <li><a class="navSubLink" routerLink="/complaint">Complaints</a></li>
+                                <li><a class="navSubLink" routerLink="/addusers">Add User</a></li>
+                                <li><a class="navSubLink" href="#">Setting</a></li>
+                                <li><a class="navSubLink" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item d-none d-md-block d-lg-block">
+                            <img src="assets/img/avatar.jpg" class="avtImg" alt="" />
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</div>
