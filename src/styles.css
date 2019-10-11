@@ -435,7 +435,7 @@ label {font-weight:600;}
 .notificationIconBadge .badge{position:absolute; top:13px; right:-4px; border-radius:10rem;}
 
 .dataNotFoundSty{text-align:center; margin:20px 0;}
-.dataNotFoundSty p{color:red; margin:0;}
+.dataNotFoundSty p{color:red; margin:0 0 0;}
 
 .uNameImg{margin-right:35px !important;}
 .avtImg{position:absolute; right:-32px; top:11px; width:30px !important; border-radius:20px;}
@@ -468,3 +468,6 @@ label {font-weight:600;}
 @media (max-width: 767.98px) {
 .navbarCollapseMain{transform: translateX(-100%); box-shadow:0 5px 5px #333;}
 }
+
+
+/* commit test */
