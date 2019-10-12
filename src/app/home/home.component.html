@@ -1,69 +1,8 @@
 <div class="homePgMain">
-    <div class="headerMain">
-        <div class="container">
-            <div class="navbar navbar-expand flex-column flex-md-row justify-content-between p-0 pt-1 pb-1">
-                <div>
-                    <div class="d-flex justify-content-between">
-                        <div class="callUsTxt d-none d-md-block d-lg-block mr-md-4 mr-lg-4 mt-2">
-                            <label>Call Us Now: </label>
-                            <span>885-123-3547</span>
-                        </div>
-                        <div class="callUsTxt d-none d-md-block d-lg-block ml-md-0 ml-lg-0 mt-2">
-                            <img src="assets/img/whatsappIcon.png" alt="">
-                            <span class="d-inline-block ml-2">9851233547</span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-link loginBtn" data-toggle="modal" data-target="#loginPopup_id">Login</button>
-                    <button type="button" class="btn btn-outline-primary registerBtn ml-1 pl-3 pr-3" data-toggle="modal" data-target="#registerPopup_id">Register</button>
-                </div>
-                <!-- <div class="loginAndRegisBtn">
-                    <button type="button" class="btn btn-link loginBtn" data-toggle="modal" data-target="#loginPopup_id">Login</button>
-                    <button type="button" class="btn btn-link registerBtn" data-toggle="modal" data-target="#registerPopup_id">Register</button>
-                </div> -->
-
-                <!-- <ul class="nav flex-row d-none ml-md-auto d-md-flex socialIconTR">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
-                        </li>
-                    </ul> -->
-            </div>
-        </div>
-    </div>
+    <app-header-before-login></app-header-before-login>
     <div class="hedBanner hedBgImgBan-md">
         <div class="container paddNone-sm">
-            <nav class="navbar navbar-expand-md navbar-expand-lg navbar-inverse bg-inverse m-0 p-0 navBarTR">
-                <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="logoWid-md" alt="logo" /></a>
-                <div class="navbarTogglerBtn">
-                    <button class="navbar-toggler" (click)="clickEvent()"><i class="fas fa-bars"></i></button>
-                </div>
-                <div class="navbar-collapse justify-content-end navbarCollapseMain"
-                    [ngClass]="status ? 'open' : 'closeB'" id="navbarNavDropdown">
-                    <div class="navbarCollapseInr">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">Contact</a>
-                            </li>
-                            <!--<li class="nav-item">
-                                    <a class="nav-link logoutLinkSty" href="contactus.html" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
-                                </li>-->
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+
             <div class="row justify-content-center text-center text-md-left justify-content-md-start">
                 <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5" data-aos="fade-right" data-aos-duration="1900"
                     data-aos-delay="50">
@@ -164,13 +103,12 @@
                                     <button type="button" class="btn btn-primary"><i class="fas fa-dolly"></i> Find More
                                         Loads</button>
                                 </div>
-                                <div class="postYourTLBtnSty">
-                                    <button type="button" class="btn btn-primary"><i class="fas fa-truck"></i> Post
-                                        Truck Location</button>
-                                </div>
+                                <!-- <div class="postYourTLBtnSty">
+                                    <button type="button" class="btn btn-primary"><i class="fas fa-truck"></i> Post Truck Location</button>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="viewAllBtn">
+                        <div class="viewAllBtn mb-2">
                             <button type="button" class="btn btn-outline-primary">View All</button>
                         </div>
                     </div>
@@ -220,17 +158,16 @@
                         <div>
                             <div
                                 class="d-flex flex-column flex-md-row flex-lg-row justify-content-center justify-content-md-between align-items-center">
-                                <div class="findMoreLoadsBtnSty">
+                                <div class="postYourTLBtnSty">
                                     <button type="button" class="btn btn-primary"><i class="fas fa-truck"></i> Find More
                                         Trucks</button>
                                 </div>
-                                <div class="postYourTLBtnSty">
-                                    <button type="button" class="btn btn-primary"><i class="fas fa-dolly"></i> Post Your
-                                        Load</button>
-                                </div>
+                                <!-- <div class="postYourTLBtnSty">
+                                    <button type="button" class="btn btn-primary"><i class="fas fa-dolly"></i> Post Your Load</button>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="viewAllBtn">
+                        <div class="viewAllBtn mb-2">
                             <button type="button" class="btn btn-outline-primary">View All</button>
                         </div>
                     </div>
@@ -589,49 +526,59 @@
 </div>
 
 <!-- Login Popup Start -->
-<div class="modal fade" id="loginPopup_id" tabindex="-1" role="dialog" aria-labelledby="loginPopupTitle"
-    aria-hidden="true">
+<div class="modal fade loginPopSty" id="loginPopup_id" tabindex="-1" role="dialog" aria-labelledby="loginPopupTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
         <div class="modal-content formMainLR">
             <div class="modal-header">
-                <h5 class="modal-title popupTitleLR">Login</h5>
+                <h5 class="modal-title popupTitleLR">Login with OTP</h5>
                 <div class="closeBtnLR">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
             </div>
-            <div class="modal-body">
+            <div class="modal-body height210">
                 <form>
-                    <div class="form-group">
-                        <div class="userNamAndPswF">
-                            <div class="logIconPosi"><i class="fas fa-user"></i></div>
-                            <input type="text" class="form-control" id="loginUsername_id" placeholder="Username" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="userNamAndPswF">
-                            <div class="logIconPosi"><i class="fas fa-lock"></i></div>
-                            <input type="password" class="form-control" id="loginPassword_id" placeholder="Password" />
-                        </div>
-                    </div>
+
                     <div>
-                        <div
-                            class="d-flex align-items-center justify-content-center justify-content-md-between flex-column flex-md-row">
-                            <div class="form-group custom-control custom-checkbox mb-0">
-                                <input type="checkbox" class="custom-control-input" id="rememberMe_id">
-                                <label class="custom-control-label" for="rememberMe_id">Remember me</label>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-link">Forgot password</button>
+                        <p class="onetimepswMsgSty">We will send you an <strong>One Time Password</strong> <br /> on
+                            this mobile number</p>
+                        <div class="form-group">
+                            <div class="userNamAndPswF">
+                                <input type="number" class="form-control" id="loginMobNum_id"
+                                    placeholder="Mobile Number" />
                             </div>
                         </div>
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-primary d-block btn-grad mx-auto requestOTPBtnSty"
+                                (click)="Fn_login()">Generate OTP</button>
+                        </div>
+                        <p class="text-center pt-2 mb-1">Dont't have an account? <a class="btn-link"
+                                href="#">Register</a></p>
                     </div>
-                    <div class="mt-2">
-                        <button type="submit" class="btn btn-primary d-block btn-grad mx-auto pl-4 pr-4"
-                            (click)="Fn_login()">login</button>
+
+                    <div class="d-none">
+                        <p class="onetimepswMsgSty">Enter OTP sent to <strong>+91 9604601273</strong></p>
+                        <div class="form-group">
+                            <div class="userNamAndPswF">
+                                <!-- <div class="logIconPosi"><i class="fas fa-lock"></i></div> -->
+                                <input type="number" class="form-control" id="loginOTP_id"
+                                    placeholder="Enter valid OTP" />
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                class="d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
+                                <div>
+                                    <button type="button" class="btn btn-link">Resend OTP</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button type="submit"
+                                class="btn btn-primary d-block btn-grad mx-auto requestOTPBtnSty">Verify</button>
+                        </div>
                     </div>
-                    <p class="text-center pt-2 mb-1">Dont't have an account? <a class="btn-link" href="#">Register</a>
-                    </p>
+
                 </form>
             </div>
         </div>
@@ -640,45 +587,70 @@
 <!-- Login Popup End -->
 
 <!-- Register Popup Start -->
-<div class="modal fade" id="registerPopup_id" tabindex="-1" role="dialog" aria-labelledby="loginPopupTitle"
-    aria-hidden="true">
+<div class="modal fade loginPopSty" id="registerPopup_id" tabindex="-1" role="dialog" aria-labelledby="loginPopupTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content formMainLR">
             <div class="modal-header">
-                <h5 class="modal-title popupTitleLR">Register</h5>
+                <h5 class="modal-title popupTitleLR">Register With OTP</h5>
                 <div class="closeBtnLR">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
             </div>
             <div class="modal-body">
                 <form>
-                    <div class="form-group">
-                        <div class="userNamAndPswF">
-                            <div class="logIconPosi"><i class="fas fa-user"></i></div>
-                            <input type="text" class="form-control" id="loginUsername_id" placeholder="Username" />
+                    <div>
+                        <div class="d-flex justify-content-center mb-3 custTransRadio">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline1">Customer</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">Transporter</label>
+                            </div>
+                        </div>
+                        <p class="onetimepswMsgSty">We will send you an <strong>One Time Password</strong> <br /> on
+                            this mobile number</p>
+                        <div class="form-group">
+                            <div class="userNamAndPswF">
+                                <input type="number" class="form-control" id="loginMobNum_id"
+                                    placeholder="Mobile Number" />
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button type="submit"
+                                class="btn btn-primary d-block btn-grad mx-auto requestOTPBtnSty">Generate OTP</button>
+                        </div>
+                        <p class="text-center pt-2 mb-1">Already have an account? <a class="btn-link" href="#">Login</a>
+                        </p>
+                    </div>
+
+                    <div class="d-none">
+                        <p class="onetimepswMsgSty">Enter OTP sent to <strong>+91 9604601273</strong></p>
+                        <div class="form-group">
+                            <div class="userNamAndPswF">
+                                <input type="number" class="form-control" id="loginOTP_id" placeholder="Enter valid OTP" />
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                class="d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
+                                <div>
+                                    <button type="button" class="btn btn-link">Resend OTP</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button type="submit"
+                                class="btn btn-primary d-block btn-grad mx-auto requestOTPBtnSty">Verify</button>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="userNamAndPswF">
-                            <div class="logIconPosi"><i class="fas fa-envelope"></i></div>
-                            <input type="email" class="form-control" id="rgEmail_id" placeholder="Email" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="userNamAndPswF">
-                            <div class="logIconPosi"><i class="fas fa-lock"></i></div>
-                            <input type="password" class="form-control" id="rgPassword_id" placeholder="Password" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="userNamAndPswF">
-                            <div class="logIconPosi"><i class="fas fa-lock"></i></div>
-                            <input type="password" class="form-control" id="rgConfPassword_id"
-                                placeholder="Confirm Password" />
-                        </div>
-                    </div>
-                    <div class="form-group custom-control custom-checkbox mb-0">
+
+
+
+                    <!-- <div class="form-group custom-control custom-checkbox mb-0">
                         <input type="checkbox" class="custom-control-input" id="tcCheckBox_id">
                         <label class="custom-control-label" for="tcCheckBox_id">I agree to the <a class="btn-link"
                                 href="#">Terms & Conditions</a></label>
@@ -687,7 +659,8 @@
                         <button type="submit"
                             class="btn btn-primary d-block btn-grad mx-auto mt-3 pl-4 pr-4">Register</button>
                     </div>
-                    <p class="text-center pt-2 mb-1">Already have an account? <a class="btn-link" href="#">Login</a></p>
+                    <p class="text-center pt-2 mb-1">Already have an account? <a class="btn-link" href="#">Login</a></p> -->
+
                 </form>
             </div>
         </div>
