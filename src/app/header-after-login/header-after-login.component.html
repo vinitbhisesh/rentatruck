@@ -8,38 +8,38 @@
             <div class="navbar-collapse justify-content-end navbarCollapseMain" [ngClass]="status ? 'open' : 'closeB'" id="navbarNavDropdown">
                 <div class="navbarCollapseInr">
                     <ul class="navbar-nav dropdownMenuMain mobileDropdownM">
-                        <li class="nav-item active">
+                        <li class="nav-item" routerLinkActive="active">
                             <a class="nav-link" routerLink="/dashboard">Dashboard</a>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown" routerLinkActive="active">
                             <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register <i class="fas fa-angle-down downRightIconMob"></i></a>
                             <ul class="subMenus dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="navSubLink dropdown-item" routerLink="/vehicle">Vehicle</a></li>
-                                <li><a class="navSubLink dropdown-item" routerLink="/booking">Booking</a></li>
-                                <li><a class="navSubLink dropdown-item" routerLink="/driver">Driver</a></li>
+                                <li><a class="navSubLink dropdown-item" routerLinkActive="active" routerLink="/vehicle">Vehicle</a></li>
+                                <li><a class="navSubLink dropdown-item" routerLinkActive="active" routerLink="/booking">Booking</a></li>
+                                <li><a class="navSubLink dropdown-item" routerLinkActive="active" routerLink="/driver">Driver</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" routerLinkActive="active">
                             <a class="nav-link" routerLink="/availablevehicle">Available Vehicle</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" routerLinkActive="active">
                             <a class="nav-link" routerLink="/sendmaterial">Send Material</a>
                         </li>
                         <!-- <li class="nav-item">
                              <a class="nav-link" routerLink="/searchvehicle"><i class="fas fa-search-location"></i>Search Vehicle</a> 
                         </li> -->
-                        <li class="nav-item notificationIconBadge d-none d-md-block d-lg-block">
+                        <li class="nav-item notificationIconBadge d-none d-md-block d-lg-block" routerLinkActive="active">
                             <a class="nav-link" routerLink="/notification"><i class="fas fa-bell"></i> <span class="badge badge-danger">2</span></a>
                         </li>
-                        <li class="dropdown ml-0 uNameImg">
+                        <li class="dropdown ml-0 uNameImg" routerLinkActive="active">
                             <a class="nav-link position-relative" id="welcomeUserTxt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Vinit <i class="fas fa-angle-down downRightIconMob"></i> <img src="assets/img/avatar.jpg" class="avtImg" alt="" /></a>
                             <ul class="subMenus dropdown-menu" aria-labelledby="welcomeUserTxt">
-                                <li><a class="navSubLink" routerLink="/profile">Profile</a></li>
-                                <li><a class="navSubLink" routerLink="/orderTrip">My Orders/Trips</a></li>
-                                <li><a class="navSubLink" routerLink="/complaint">Complaints</a></li>
-                                <li><a class="navSubLink" routerLink="/addusers">Add User</a></li>
-                                <li><a class="navSubLink" href="#">Setting</a></li>
-                                <li><a class="navSubLink" href="#">Logout</a></li>
+                                <li><a class="dropdown-item navSubLink" routerLinkActive="active" routerLink="/profile">Profile</a></li>
+                                <li><a class="dropdown-item navSubLink" routerLinkActive="active" routerLink="/orderTrip">My Orders/Trips</a></li>
+                                <li><a class="dropdown-item navSubLink" routerLinkActive="active" routerLink="/complaint">Complaints</a></li>
+                                <li><a class="dropdown-item navSubLink" routerLinkActive="active" routerLink="/addusers">Add User</a></li>
+                                <li><a class="dropdown-item navSubLink" routerLinkActive="active" href="#">Setting</a></li>
+                                <li><a class="dropdown-item navSubLink" routerLinkActive="active" href="#">Logout</a></li>
                             </ul>
                         </li>
                         <!-- <li class="nav-item d-none d-md-block d-lg-block">

@@ -455,7 +455,7 @@ label {font-weight:600;}
 .tabContentSty{border:1px solid #71b2d8;}
 .liveAvailableTrucksMain li{font-size:0.9rem; font-weight:500;}
 
-.alertMsgSty{font-size:0.9rem; font-weight:500;}
+.alertMsgSty{font-size:0.9rem; font-weight:500; padding:7px 10px;}
 .alertMsgSty p{margin:0;}
 .alertMsgSty .circleShortName{width:30px; height:30px; border-radius:50%; background:#fff; padding:4px 0 0; text-align:center;}
 
@@ -465,6 +465,21 @@ label {font-weight:600;}
 .onetimepswMsgSty{font-size:0.9rem; text-align:center;}
 .height210{height:210px;}
 .custTransRadio label{font-size:0.9rem;}
+
+
+.faqBannerM{background-image:url(assets/img/faqBanner.png); height:260px; background-repeat:no-repeat; background-position:bottom center;}
+.faqCityImg{background:url(assets/img/faqCityImg.png) repeat-x left center; width:100%; height:165px; position:absolute; bottom:53px; z-index:-1;}
+
+.accordionSty .card-header{padding:0 0 0 15px; background-color:#f9f9f9; font-size:0.9rem; font-weight:500;}
+.accordionSty .card-header:hover{background-color: #fefffb;}
+.accordionSty .card-body{background:#d7eff3; font-size:0.9rem;}
+
+
+.dropdown-item.active, .dropdown-item:active{color:#2892cf; background-color:transparent;}
+
+
+
+
 
 }
 
