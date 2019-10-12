@@ -453,6 +453,14 @@ label {font-weight:600;}
 .tabContentSty{border:1px solid #71b2d8;}
 .liveAvailableTrucksMain li{font-size:0.9rem; font-weight:500;}
 
+.alertMsgSty{font-size:0.9rem; font-weight:500;}
+.alertMsgSty p{margin:0;}
+.alertMsgSty .circleShortName{width:30px; height:30px; border-radius:50%; background:#fff; padding:4px 0 0; text-align:center;}
+
+
+
+
+
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/

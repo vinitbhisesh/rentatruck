@@ -14,6 +14,7 @@ import { ComplaintComponent } from './complaint/complaint.component';
 import { OrderTripComponent } from './order-trip/order-trip.component';
 import { LiveAvailableLoadsComponent } from './live-available-loads/live-available-loads.component';
 import { LiveAvailableTrucksComponent } from './live-available-trucks/live-available-trucks.component';
+import { NotificationComponent } from './notification/notification.component';
 
 //const routes: Routes = [];
 
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'orderTrip', component: OrderTripComponent },
   { path: 'liveAvailableLoads', component: LiveAvailableLoadsComponent },
   { path: 'liveAvailableTrucks', component: LiveAvailableTrucksComponent },
+  { path: 'notification', component: NotificationComponent },
 ];
 
 

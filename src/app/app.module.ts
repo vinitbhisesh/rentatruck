@@ -21,6 +21,7 @@ import { ComplaintComponent } from './complaint/complaint.component';
 import { OrderTripComponent } from './order-trip/order-trip.component';
 import { LiveAvailableLoadsComponent } from './live-available-loads/live-available-loads.component';
 import { LiveAvailableTrucksComponent } from './live-available-trucks/live-available-trucks.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { LiveAvailableTrucksComponent } from './live-available-trucks/live-avail
     OrderTripComponent,
     LiveAvailableLoadsComponent,
     LiveAvailableTrucksComponent,
+    NotificationComponent,
     
   ],
   imports: [
