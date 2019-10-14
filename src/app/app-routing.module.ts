@@ -17,12 +17,12 @@ import { LiveAvailableTrucksComponent } from './live-available-trucks/live-avail
 import { NotificationComponent } from './notification/notification.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CompanyDetailsComponent } from './company-details/company-details.component';
 
 //const routes: Routes = [];
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  //{ path: '', component: RegisterVehicleComponent },
   { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'driver', component: RegisterDriverComponent },
@@ -39,7 +39,8 @@ const routes: Routes = [
   { path: 'liveAvailableTrucks', component: LiveAvailableTrucksComponent },
   { path: 'notification', component: NotificationComponent },
   { path: 'faq', component: FaqComponent },
-  { path: 'contactUs', component: ContactUsComponent }
+  { path: 'contactUs', component: ContactUsComponent },
+  { path: 'companyDetails', component: CompanyDetailsComponent }
 ];
 
 
