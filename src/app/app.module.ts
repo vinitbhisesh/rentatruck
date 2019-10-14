@@ -23,6 +23,7 @@ import { LiveAvailableLoadsComponent } from './live-available-loads/live-availab
 import { LiveAvailableTrucksComponent } from './live-available-trucks/live-available-trucks.component';
 import { NotificationComponent } from './notification/notification.component';
 import { FaqComponent } from './faq/faq.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { FaqComponent } from './faq/faq.component';
     LiveAvailableTrucksComponent,
     NotificationComponent,
     FaqComponent,
+    ContactUsComponent,
     
   ],
   imports: [
