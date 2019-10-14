@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 import AOS from 'aos';
 
 @Component({
@@ -8,6 +9,11 @@ import AOS from 'aos';
 })
 export class AppComponent {
   title = 'rentatruck';
+  router: string;
+
+  constructor(private _router: Router){
+          this.router = _router.url; 
+    }
 
   ngOnInit() {
     AOS.init({
