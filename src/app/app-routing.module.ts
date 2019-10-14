@@ -20,8 +20,9 @@ import { FaqComponent } from './faq/faq.component';
 //const routes: Routes = [];
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   //{ path: '', component: RegisterVehicleComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'driver', component: RegisterDriverComponent },
   { path: 'vehicle', component: RegisterVehicleComponent },

@@ -1,4 +1,3 @@
-<app-header-after-login *ngIf="_router.url == '/dashboard'"></app-header-after-login>
-<app-breadcrumb *ngIf="_router.url == '/dashboard'"></app-breadcrumb>
+<app-header-after-login *ngIf="_router.url != '/home'"></app-header-after-login>
+<app-breadcrumb *ngIf="_router.url != '/home'"></app-breadcrumb>
 <router-outlet></router-outlet>
-  
