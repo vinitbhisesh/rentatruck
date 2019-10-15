@@ -45,41 +45,44 @@ export class HomeComponent implements OnInit {
 
 
   onUserOTP() {
-    if (this.frmUserOTP.valid) {
-      if (this.isValidateOTP == false) {
-        this.http.get(this.getBaseUrl() + 'masterdata/User/UserOTP?UserMobileNumber=' + this.frmUserOTP.value.UserMobileNumber + '')
-          .pipe(map(responseData => {
-            let resData = [];
-            if (responseData == null || responseData == '') { return resData } else {
-              for (const key in responseData) { resData.push(responseData[key]) } return resData;
-            }
-          }))
-          .subscribe(dt => {
-            this.isValidateOTP = true;
-            this.btnSubmitText = 'Verify';
-          }, error => {
+    // if (this.frmUserOTP.valid) {
+    //   if (this.isValidateOTP == false) {
+    //     this.http.get(this.getBaseUrl() + 'masterdata/User/UserOTP?UserMobileNumber=' + this.frmUserOTP.value.UserMobileNumber + '')
+    //       .pipe(map(responseData => {
+    //         let resData = [];
+    //         if (responseData == null || responseData == '') { return resData } else {
+    //           for (const key in responseData) { resData.push(responseData[key]) } return resData;
+    //         }
+    //       }))
+    //       .subscribe(dt => {
+    //         this.isValidateOTP = true;
+    //         this.btnSubmitText = 'Verify';
+    //       }, error => {
 
-          })
-      }
-      else {
-        this.http.get(this.getBaseUrl() + 'masterdata/User/ValidateOTP?UserMobileNumber=' + this.frmUserOTP.value.UserMobileNumber + '&OTP=' + this.frmUserOTP.value.OTP)
-          .pipe(map(responseData => {
+    //       })
+    //   }
+    //   else {
+    //     this.http.get(this.getBaseUrl() + 'masterdata/User/ValidateOTP?UserMobileNumber=' + this.frmUserOTP.value.UserMobileNumber + '&OTP=' + this.frmUserOTP.value.OTP)
+    //       .pipe(map(responseData => {
             
-            let resData = [];
-            if (responseData == null || responseData == '') { return resData } else {
-              for (const key in responseData) { resData.push(responseData[key]) } return resData;
-            }
-          }))
-          .subscribe(dt => {
+    //         let resData = [];
+    //         if (responseData == null || responseData == '') { return resData } else {
+    //           for (const key in responseData) { resData.push(responseData[key]) } return resData;
+    //         }
+    //       }))
+    //       .subscribe(dt => {
+    //         this.messageService.sendMessage('1');
+    //         this.closeLoginModal();
+    //         this.router.navigate(['/dashboard']);
+    //         localStorage.info = (JSON.stringify(dt))
+    //       }, error => {
+    //         //alert(error.error.Message + '\n' + error.message)
+    //       })
+    //   }
+    // }
             this.messageService.sendMessage('1');
-            this.closeLoginModal();
             this.router.navigate(['/dashboard']);
-            localStorage.info = (JSON.stringify(dt))
-          }, error => {
-            //alert(error.error.Message + '\n' + error.message)
-          })
-      }
-    }
+
   }
 
   closeLoginModal() {

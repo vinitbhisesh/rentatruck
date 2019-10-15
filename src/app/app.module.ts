@@ -60,7 +60,6 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClient,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
