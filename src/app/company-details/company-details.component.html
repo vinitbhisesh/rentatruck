@@ -1,0 +1,462 @@
+<div class="dashbContentFlexH position-relative">
+
+    <div class="bodyBgGradColor"></div>
+
+    <div class="container-fluid">
+
+        <div class="contentAreaBox">
+            <div class="form-row">
+                <div class="col-sm-9 col-md-9 col-lg-9">
+                    <div class="searchBoxSty mb-2">
+                        <input type="text" placeholder="Search..">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <div class="d-flex justify-content-end">
+                        <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCompany_id">Add Company</button></div>
+                        <div class="ml-2"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBranch_id">Add Branch</button></div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="detailsScrollBarV">
+<div class="cardSty availabelVehicleCardSty" [ngClass]="status ? 'open' : 'closeB'">
+
+                                <div class="mainList">
+                                    <div class="d-flex d-flex justify-content-between align-items-center parentAL">
+                                        <div>
+                                            <div class="d-flex availabelVehicleFSty">
+                                                <div class="lblSpanSty">
+                                                    <label>Company Name: </label>
+                                                    <span>Shaurya Technosoft Pvt. Ltd.</span>
+                                                </div>
+                                                <div class="lblSpanSty">
+                                                    <label>Mobile Number: </label>
+                                                    <span>+91 9604601273</span>
+                                                </div>
+                                                <div class="lblSpanSty">
+                                                    <label>Email Id: </label>
+                                                    <span>vinit.bhise@shauryatechnosoft.com</span>
+                                                </div>
+                                                <div class="lblSpanSty">
+                                                    <label>PAN: </label>
+                                                    <span>4754545848</span>
+                                                </div>
+                                                <div class="lblSpanSty">
+                                                    <label>GST: </label>
+                                                    <span>18%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="btnIconStyDetails">
+                                                <div>
+                                                    <button (click)="clickEvent()" class="btn btn-sm btn-outline-primary buttonArrowAV"><i class="fas fa-angle-down"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <ul class="subListAV">
+                                        <li>
+                                            <div class="d-flex availabelVehicleFSty">
+                                                   <div class="lblSpanSty">
+                                                    <label>Preferences: </label>
+                                                    <span>NA</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex availabelVehicleFSty">
+                                                   <div class="lblSpanSty">
+                                                    <label>Conpany Address: </label>
+                                                    <span>694/1/2/4, Sahakar Bhavan, 2nd Floor, Adarsh Nagar, Hotel Utsav Chowk, Near City-Pride Cinema, Pune-Satara road, Pune-411037,</span>
+                                                </div>
+                                            </div>
+                                            
+<div class="branchesSecMain">
+
+<h6 class="allBranchesTitle">All Branches</h6>
+
+    <div class="d-flex flex-wrap justify-content-start">
+        <div class="card m-1">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Shaurya Finance Pvt. Ltd.</h6>
+                <p class="card-text">Bavdhan Pune</p>
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Remove</a>
+            </div>
+        </div>
+
+
+        <div class="card m-1">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Shaurya Electronic Shopping Store.</h6>
+                <p class="card-text">Senapati bapat road</p>
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Remove</a>
+            </div>
+        </div>
+
+
+        <div class="card m-1">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Shaurya Petroleum</h6>
+                <p class="card-text">Hinjewadi Phase 3</p>
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Remove</a>
+            </div>
+        </div>
+
+        <div class="card m-1">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Shaurya Studio</h6>
+                <p class="card-text">Baner pune</p>
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Remove</a>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+
+
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addCompany_id" tabindex="-1" role="dialog" aria-labelledby="addCompany_idTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCompany_idTitle">Add Company</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+<div>
+            <form>
+                <div class="vertiScrollBar">
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-8 col-lg-8">
+                    <div class="form-group">
+                        <label for="companyName_id">Company Name</label>
+                        <input type="text" class="form-control" id="companyName_id" placeholder="Company Name" />
+                    </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="mobileNumber_id">Mobile Number</label>
+                                <input type="number" class="form-control" id="mobileNumber_id" placeholder="Mobile Number" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="email_id">Email Id</label>
+                                <input type="email" class="form-control" id="email_id" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="state_id">State</label>
+                                <select class="form-control" id="state_id">
+                                    <option>Select</option>
+                                    <option>Maharashtra</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="city_id">City</label>
+                                <select class="form-control" id="city_id">
+                                    <option>Select</option>
+                                    <option>Pune</option>
+                                    <option>Kolhapur</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="rdAddress_id">Address</label>
+                                <textarea class="form-control" id="rdAddress_id" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>Preferences</label>
+                                <div class="d-flex justify-content-start">
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                        <input type="radio" class="custom-control-input" name="preferences" id="interstate_id">
+                                        <label class="custom-control-label" for="interstate_id">Interstate</label>
+                                    </div>
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                        <input type="radio" class="custom-control-input" name="preferences" id="betweenStates_id">
+                                        <label class="custom-control-label" for="betweenStates_id">Between States</label>
+                                    </div>
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                        <input type="radio" class="custom-control-input" name="preferences" id="anywhere_id">
+                                        <label class="custom-control-label" for="anywhere_id">Anywhere</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="panNumber_id">PAN Number</label>
+                                <input type="text" class="form-control" id="panNumber_id" placeholder="PAN Number" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="gstNumber_id">GST Number</label>
+                                <input type="text" class="form-control" id="gstNumber_id" placeholder="GST Number" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="basicLocation_id">Basic Location</label>
+                                <input type="email" class="form-control" id="basicLocation_id" placeholder="Basic Location" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label>Upload Company Photo</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="companyPhotoFile" required>
+                            <label class="custom-file-label" for="companyPhotoFile">Choose file...</label>
+                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="aadharCardNumber_id">Upload PAN Card</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="panCardFile" required>
+                            <label class="custom-file-label" for="panCardFile">Choose file...</label>
+                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="aadharCardNumber_id">Upload Aadhar card</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="aadharCardFile" required>
+                            <label class="custom-file-label" for="aadharCardFile">Choose file...</label>
+                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Add Branch Modal -->
+<div class="modal fade" id="addBranch_id" tabindex="-1" role="dialog" aria-labelledby="addBranch_idTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBranch_idTitle">Add Branch</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+<div>
+            <form>
+                <div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="state_id">Company</label>
+                                <select class="form-control" id="state_id">
+                                    <option>Select</option>
+                                    <option>Shaurya Technosoft Pvt. Ltd.</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-8 col-lg-8">
+                    <div class="form-group">
+                        <label for="branchName_id">Branch Name</label>
+                        <input type="text" class="form-control" id="branchName_id" placeholder="Branch Name" />
+                    </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="mobileNumber_id">Mobile Number</label>
+                                <input type="number" class="form-control" id="mobileNumber_id" placeholder="Mobile Number" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="email_id">Email Id</label>
+                                <input type="email" class="form-control" id="email_id" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="state_id">State</label>
+                                <select class="form-control" id="state_id">
+                                    <option>Select</option>
+                                    <option>Maharashtra</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label for="city_id">City</label>
+                                <select class="form-control" id="city_id">
+                                    <option>Select</option>
+                                    <option>Pune</option>
+                                    <option>Kolhapur</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="rdAddress_id">Address</label>
+                                <textarea class="form-control" id="rdAddress_id" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>Preferences</label>
+                                <div class="d-flex justify-content-start">
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                        <input type="radio" class="custom-control-input" name="preferences" id="interstate_id">
+                                        <label class="custom-control-label" for="interstate_id">Interstate</label>
+                                    </div>
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                        <input type="radio" class="custom-control-input" name="preferences" id="betweenStates_id">
+                                        <label class="custom-control-label" for="betweenStates_id">Between States</label>
+                                    </div>
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                        <input type="radio" class="custom-control-input" name="preferences" id="anywhere_id">
+                                        <label class="custom-control-label" for="anywhere_id">Anywhere</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>PAN Number: Same as Company</label>
+                                <div class="d-flex justify-content-start">
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                        <input type="radio" class="custom-control-input" name="panNumber" id="yes_id">
+                                        <label class="custom-control-label" for="yes_id">Yes</label>
+                                    </div>
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                        <input type="radio" class="custom-control-input" name="panNumber" id="no_id">
+                                        <label class="custom-control-label" for="no_id">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="gstNumber_id">PAN Number</label>
+                                <input type="text" class="form-control" id="gstNumber_id" placeholder="GST Number" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>GST Number: Same as Company</label>
+                                <div class="d-flex justify-content-start">
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                        <input type="radio" class="custom-control-input" name="panNumber" id="yes_id">
+                                        <label class="custom-control-label" for="yes_id">Yes</label>
+                                    </div>
+                                    <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                        <input type="radio" class="custom-control-input" name="panNumber" id="no_id">
+                                        <label class="custom-control-label" for="no_id">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="gstNumber_id">GST Number</label>
+                                <input type="text" class="form-control" id="gstNumber_id" placeholder="GST Number" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="basicLocation_id">Basic Location</label>
+                                <input type="email" class="form-control" id="basicLocation_id" placeholder="Basic Location" />
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </form>
+        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

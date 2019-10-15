@@ -25,6 +25,9 @@ import { NotificationComponent } from './notification/notification.component';
 import { FaqComponent } from './faq/faq.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CompanyDetailsComponent } from './company-details/company-details.component';
+
 
 @NgModule({
   declarations: [
@@ -49,11 +52,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     LiveAvailableLoadsComponent,
     LiveAvailableTrucksComponent,
     NotificationComponent,
-    FaqComponent
+    FaqComponent,
+    ContactUsComponent,
+    CompanyDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClient,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule

@@ -261,7 +261,6 @@ body .wdthAuto{width:auto;}
 
 .findMoreLoadsBtnSty button{width:160px; font-size:0.9rem;}
 .findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#17a9e1; border-radius:30px; border:none;}
-.postYourTLBtnSty{margin-left:20px;}
 .postYourTLBtnSty button{width:180px; font-size:0.9rem;}
 .postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#d5a006; border-radius:30px; border:none;}
 .viewAllBtn button{font-weight:500; border-radius:30px; font-size:0.9rem;}
@@ -276,7 +275,7 @@ body .wdthAuto{width:auto;}
 .navBarTR .navbar-nav{background-color:transparent;}
 .welcomeTextMain .h1fontsize-md{color:#2691cf; text-transform:uppercase; font-size:1.6rem; /*font-size:3.5rem;*/ margin:55px 0 0 0; line-height:normal;}
 .welcomeTextMain .h2fontsize-md{font-size:1.1rem; margin:5px 0 20px;}
-.navBarTR img.logoWid-md{width:auto; margin-top:10px;}
+.navBarTR img.logoWid-md{width:170px; margin-top:10px;}
 br{display:block;}
 .hedBgImgBan-md{min-height:430px; max-width:100%; padding:15px 0 0;}
 .hedBgImgBan-md{padding-top:0;}
@@ -389,14 +388,13 @@ label {font-weight:600;}
 .tbaleListLivetTL{margin-bottom:30px;}
 .tbaleListLivetTL table{width:100%; text-align:center;}
 .tbaleListLivetTL table tr:nth-child(even) {background:#fff;}
-.tbaleListLivetTL table tr:nth-child(odd) {background: rgb(255,255,255); background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(217,217,217,1) 50%, rgba(255,255,255,1) 100%);}
+.tbaleListLivetTL table tr:nth-child(odd) {background: rgb(255,255,255); background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #c9e6ef 50%, rgba(255,255,255,1) 100%);}
 .tbaleListLivetTL table tr td{border-bottom:1px solid #fafafa; color:#000; font-weight:400; padding:10px; font-size:0.9rem;}
 .tbaleListLivetTL i{display:inline-block; margin-right:3px; font-size:0.8rem;}
 .tbaleListLivetTL table a{text-decoration:none;}
 
 .findMoreLoadsBtnSty button{width:200px;}
 .findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#17a9e1; border-radius:30px; border:none;}
-.postYourTLBtnSty{margin-left:20px;}
 .postYourTLBtnSty button{width:200px;}
 .postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#d5a006; border-radius:30px; border:none;}
 .viewAllBtn button{font-weight:500; border-radius:30px;}
@@ -476,6 +474,18 @@ label {font-weight:600;}
 
 
 .dropdown-item.active, .dropdown-item:active{color:#2892cf; background-color:transparent;}
+
+
+.getEstimateBL{padding:10px 20px 25px; border-radius:15px; margin-top:15px; box-shadow:0 0 10px #ccc;}
+.getEstimateBL .getEstimateBtn{font-size:1rem; font-weight:500; margin:5px auto 0; width:160px; display:block; position:absolute; left:34%;}
+
+.allBranchesTitle{margin:10px 0 0 0; padding:10px 0 10px 5px; border-top:1px solid #ddd;}
+.branchesSecMain .card{border:1px solid #a8d2ea; min-width:295px;}
+.branchesSecMain .card .card-subtitle{ color:#444; font-size:0.9rem;}
+
+
+
+
 
 
 
