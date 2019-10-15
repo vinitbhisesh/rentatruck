@@ -19,7 +19,6 @@ export class AppComponent implements OnDestroy {
 
     // subscribe to home component messages
     this.subscription = this.messageService.getMessage().subscribe(message => {
-      debugger
       if (message.text == '1') {
         this.messages.push(message);
         this.isLoggedIn = true;

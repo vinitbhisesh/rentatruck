@@ -102,10 +102,17 @@
         </div>
     </div>
 
-    <div class="estimateFormMain pt-2 pb-2 pl-2 pr-2 px-md-0">
-        <div class="container p-0">
-            <h4 class="text-white text-center">Welcome to RentPeTruck</h4>
-        </div>
+    <div class="pt-2 pb-2 pl-2 pr-2 px-md-0">
+            <div class="position-relative">
+                <div class="homeCityImg"></div>
+                <div class="animation">
+    <div class="roadBg">
+      <div class="deliveryTruckOne"></div>
+      <div class="deliveryTruckThree"></div>
+      <div class="deliveryTruckTwo"></div>
+    </div>
+  </div>
+            </div>
     </div>
 
     <div>
@@ -484,9 +491,7 @@
                                 formControlName="UserMobileNumber" placeholder="e.g. 1234567890" minlength=10
                                 maxlength=10 />
                         </div>
-                        <span class="help-block mb-2"
-                            *ngIf="!frmUserOTP.get('UserMobileNumber').valid && frmUserOTP.get('UserMobileNumber').touched">
-                            Enter valid mobile no.</span>
+                        <span class="help-block mb-2" *ngIf="!frmUserOTP.get('UserMobileNumber').valid && frmUserOTP.get('UserMobileNumber').touched">Enter valid mobile no.</span>
                         <!-- <div *ngIf="frmUserOTP.get('UserMobileNumber').errors.required">
                             Mobile number is required.
                         </div> -->
@@ -502,12 +507,9 @@
                     <div *ngIf="isValidateOTP">
                         <div class="form-group">
                             <div class="userNamAndPswF">
-                                <input type="text" class="form-control" formControlName="OTP"
-                                    placeholder="Enter valid OTP" minlength=5 maxlength=5 />
+                                <input type="text" class="form-control" formControlName="OTP" placeholder="Enter valid OTP" minlength=5 maxlength=5 />
                             </div>
-                            <span class="help-block mb-2"
-                                *ngIf="!frmUserOTP.get('OTP').valid && frmUserOTP.get('OTP').touched">
-                                Enter valid OTP</span>
+                            <span class="help-block mb-2" *ngIf="!frmUserOTP.get('OTP').valid && frmUserOTP.get('OTP').touched">Enter valid OTP</span>
                         </div>
                         <div>
                             <div
@@ -520,8 +522,7 @@
 
                     </div>
                     <div class="mt-2">
-                        <button type="submit"
-                            class="btn btn-primary d-block btn-grad mx-auto">{{btnSubmitText}}</button>
+                        <button type="submit" class="btn btn-primary d-block btn-grad mx-auto">{{btnSubmitText}}</button>
                     </div>
                 </form>
             </div>

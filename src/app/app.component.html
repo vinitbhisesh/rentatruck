@@ -1,3 +1,16 @@
 <app-header-after-login *ngIf="isLoggedIn"></app-header-after-login>
 <app-breadcrumb *ngIf="isLoggedIn"></app-breadcrumb>
+
 <router-outlet></router-outlet>
+
+<footer *ngIf="isLoggedIn">
+    <div class="copyRightSec pt-2 pb-2">
+        <div class="container">
+            <div
+                class="d-flex flex-column flex-md-row flex-lg-row align-items-center justify-content-center justify-content-md-between">
+                <div><img src="assets/img/footerLogo.png" class="mx-auto widt115" alt="" /></div>
+                <div class="copyRightTxt">Copyright 2019 All right reserved</div>
+            </div>
+        </div>
+    </div>
+</footer>
