@@ -23,7 +23,8 @@ import { LiveAvailableLoadsComponent } from './live-available-loads/live-availab
 import { LiveAvailableTrucksComponent } from './live-available-trucks/live-available-trucks.component';
 import { NotificationComponent } from './notification/notification.component';
 import { FaqComponent } from './faq/faq.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,14 +49,14 @@ import { FaqComponent } from './faq/faq.component';
     LiveAvailableLoadsComponent,
     LiveAvailableTrucksComponent,
     NotificationComponent,
-    FaqComponent,
-    
+    FaqComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
-    
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent, ]

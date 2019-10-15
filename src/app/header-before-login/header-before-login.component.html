@@ -1,52 +1,53 @@
-    <div class="headerMain">
-        <div class="container">
-            <div class="navbar navbar-expand flex-column flex-md-row justify-content-between p-0 pt-1 pb-1">
-                <div>
-                    <div class="d-flex justify-content-between">
-                        <div class="callUsTxt d-none d-md-block d-lg-block mr-md-4 mr-lg-4 mt-2">
-                            <label>Call Us Now: </label>
-                            <span>885-123-3547</span>
-                        </div>
-                        <div class="callUsTxt d-none d-md-block d-lg-block ml-md-0 ml-lg-0 mt-2">
-                            <img src="assets/img/whatsappIcon.png" alt="">
-                            <span class="d-inline-block ml-2">9851233547</span>
-                        </div>
+<div class="headerMain">
+    <div class="container">
+        <div class="navbar navbar-expand flex-column flex-md-row justify-content-between p-0 pt-1 pb-1">
+            <div>
+                <div class="d-flex justify-content-between">
+                    <div class="callUsTxt d-none d-md-block d-lg-block mr-md-4 mr-lg-4 mt-2">
+                        <label>Call Us Now: </label>
+                        <span>885-123-3547</span>
+                    </div>
+                    <div class="callUsTxt d-none d-md-block d-lg-block ml-md-0 ml-lg-0 mt-2">
+                        <img src="assets/img/whatsappIcon.png" alt="">
+                        <span class="d-inline-block ml-2">9851233547</span>
                     </div>
                 </div>
-                <div>
-                    <button type="button" class="btn btn-link loginBtn" data-toggle="modal" data-target="#loginPopup_id">Login</button>
-                    <button type="button" class="btn btn-outline-primary registerBtn ml-1 pl-3 pr-3" data-toggle="modal" data-target="#registerPopup_id">Register</button>
-                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-link loginBtn" (click)="showLoginModal()">Login</button>
+                <button type="button" class="btn btn-outline-primary registerBtn ml-1 pl-3 pr-3" data-toggle="modal"
+                    data-target="#registerPopup_id">Register</button>
             </div>
         </div>
     </div>
+</div>
 <div class="container">
-                <nav class="navbar navbar-expand-md navbar-expand-lg navbar-inverse bg-inverse m-0 p-0 navBarTR">
-                <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="logoWid-md" alt="logo" /></a>
-                <div class="navbarTogglerBtn">
-                    <button class="navbar-toggler" (click)="clickEvent()"><i class="fas fa-bars"></i></button>
-                </div>
-                <div class="navbar-collapse justify-content-end navbarCollapseMain"
-                    [ngClass]="status ? 'open' : 'closeB'" id="navbarNavDropdown">
-                    <div class="navbarCollapseInr">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active" routerLinkActive="active">
-                                <a class="nav-link" href="">Home</a>
-                            </li>
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link" href="">About</a>
-                            </li>
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link" routerLink="/faq">FAQ</a>
-                            </li>
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link" href="">Contact</a>
-                            </li>
-                            <!--<li class="nav-item">
-                                    <a class="nav-link logoutLinkSty" href="contactus.html" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
-                                </li>-->
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+    <nav class="navbar navbar-expand-md navbar-expand-lg navbar-inverse bg-inverse m-0 p-0 navBarTR">
+        <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="logoWid-md" alt="logo" /></a>
+        <div class="navbarTogglerBtn">
+            <button class="navbar-toggler" (click)="clickEvent()"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="navbar-collapse justify-content-end navbarCollapseMain" [ngClass]="status ? 'open' : 'closeB'"
+            id="navbarNavDropdown">
+            <div class="navbarCollapseInr">
+                <ul class="navbar-nav">
+                    <li class="nav-item active" routerLinkActive="active">
+                        <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink="/faq">FAQ</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" href="">Contact</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link logoutLinkSty" href="contactus.html" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>

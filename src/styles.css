@@ -497,6 +497,12 @@ label {font-weight:600;}
 .navbarCollapseMain{transform: translateX(-100%); box-shadow:0 5px 5px #333;}
 }
 
+.modal { background: rgba(0,0,0,0.9); }
+
+.custom-select.is-invalid, .form-control.is-invalid,.was-validated .custom-select:invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+
 
 /* commit test */
 /* commit test 2 */

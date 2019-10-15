@@ -11,10 +11,13 @@ export class HeaderBeforeLoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
   status: boolean = false;
-  clickEvent(){
-  this.status = !this.status;       
+  clickEvent() {
+    this.status = !this.status;
   }
 
+  showLoginModal() {
+    document.getElementById("loginPopup_id").classList.add('show');
+    document.getElementById("loginPopup_id").style.display = 'block';
+  }
 }
