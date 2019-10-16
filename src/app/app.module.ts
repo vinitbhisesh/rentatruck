@@ -27,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { VehicleGroupComponent } from './vehicle-group/vehicle-group.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
     FaqComponent,
     ContactUsComponent,
     CompanyDetailsComponent,
+    VehicleGroupComponent,
     
   ],
   imports: [

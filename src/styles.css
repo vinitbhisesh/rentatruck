@@ -313,7 +313,7 @@ br{display:block;}
 .breadcrumbMain{background-color:#fff; border-bottom:1px solid #d6d4d4; box-shadow:0 3px 5px #ccc inset;}
 .breadcrumbMain ol{margin-bottom:0; background-color: transparent; border-radius:0; padding:8px 0;}
 .dashbContentFlexH{padding:15px 0;}
-.contentAreaBox{background-color:#fff; padding:10px; border-radius:10px; position:relative; box-shadow:0 0px 5px #bdbdbd; z-index:1; height: calc(100vh - 130px);}
+.contentAreaBox{background-color:#fff; padding:10px; border-radius:10px; position:relative; box-shadow:0 0px 5px #bdbdbd; z-index:1; height: calc(100vh - 155px);}
 
 .dashboardPgMain .form-group{margin-bottom:0.8rem;}
 .dashboardPgMain label{margin-bottom: .3rem; margin-left: .2rem;}
@@ -491,6 +491,17 @@ label {font-weight:600;}
 .loginPopSty .help-block{position:absolute; color:#dc3545; text-align:center; left:35%;}
 
 
+.usersSecMain .card{border:1px solid #a8d2ea; min-width:295px;}
+.usersSecMain .card .card-subtitle{ color:#444; font-size:0.9rem;}
+.usersSecMain .card-text{color:#000; font-weight:500;}
+.usersSecMain .card .card-text small, .usersSecMain .card .card-subtitle small{font-size:0.8rem !important; display:block;}
+
+.companyCheckboxListMain{width:100%; box-shadow:0 0 3px #c7c6c6; border-radius:5px; margin:0 0 15px; background:#fafafa; padding:0;}
+.companyCheckboxList{margin:6px;}
+.selectTitleBtn{border-bottom:1px solid #ddd; padding:5px;}
+.selectCompTitle{font-size:0.8rem; font-weight:500; margin-left:5px;}
+.companyCheckboxList label{font-weight:400;}
+.mt26{ margin-top:26px;}
 
 }
 

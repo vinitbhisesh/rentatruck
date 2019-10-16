@@ -18,6 +18,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { VehicleGroupComponent } from './vehicle-group/vehicle-group.component';
 
 //const routes: Routes = [];
 
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path: 'notification', component: NotificationComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'contactUs', component: ContactUsComponent },
-  { path: 'companyDetails', component: CompanyDetailsComponent }
+  { path: 'companyDetails', component: CompanyDetailsComponent },
+  { path: 'vehicleGroup', component: VehicleGroupComponent }
 ];
 
 
