@@ -151,13 +151,13 @@
 
                     <form>
                         <div>
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
                             <div class="form-group">
                                 <label for="vehicleNumber_id">Vehicle Number</label>
-                                <input type="text" class="form-control" id="vehicleNumber_id"
-                                    placeholder="Vehicle number" />
+                                <input type="text" class="form-control" id="vehicleNumber_id" placeholder="Vehicle number" />
                             </div>
-
-                            <div class="row">
+                                </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="form-group">
                                         <label>Trip Type</label>
@@ -171,22 +171,6 @@
                                                 <input type="radio" class="custom-control-input" name="tripType"
                                                     id="recurringTT_id">
                                                 <label class="custom-control-label" for="recurringTT_id">Recurring</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label>Load Status</label>
-                                        <div class="d-flex justify-content-start">
-                                            <div class="form-group custom-control custom-radio my-1 mr-sm-4">
-                                                <input type="radio" class="custom-control-input" name="lsFullPartial" id="lsFull_id">
-                                                <label class="custom-control-label" for="lsFull_id">Full</label>
-                                            </div>
-                                            <div class="form-group custom-control custom-radio my-1 mr-sm-2">
-                                                <input type="radio" class="custom-control-input" name="lsFullPartial"
-                                                    id="lsPartial_id">
-                                                <label class="custom-control-label" for="lsPartial_id">Partial</label>
                                             </div>
                                         </div>
                                     </div>
@@ -256,40 +240,139 @@
 
                             </div>
 
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-3 col-lg-3">
                                     <div class="form-group">
                                         <label for="bookingAV_id">Date</label>
                                         <input type="text" class="form-control" id="bookingAV_id"
                                             placeholder="dd/mm/yyyy" />
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-sm-12 col-md-3 col-lg-3">
                                     <div class="form-group">
                                         <label for="timeAV_id">Time</label>
                                         <input type="text" class="form-control" id="timeAV_id" placeholder="00:00 AM" />
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-sm-12 col-md-3 col-lg-3">
                                     <div class="form-group">
                                         <label for="fromAV_id">From</label>
                                         <input type="text" class="form-control" id="fromAV_id" placeholder="Pune" />
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="col-sm-12 col-md-3 col-lg-3">
                                     <div class="form-group">
                                         <label for="toAV_id">To</label>
                                         <input type="text" class="form-control" id="toAV_id" placeholder="Kolhapur" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="availableLoadTon_id">Available Load (Ton)</label>
-                                <input type="text" class="form-control" id="availableLoadTon_id" placeholder="Available Load (Ton)" />
+
+<div class="form-row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Via" aria-label="Via" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group">
+            <table class="tblSty" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th colspan="3">Trip Route</th>
+                </tr>
+                <tr>
+                    <td>Source</td>
+                    <td>Destination</td>
+                    <td>Distance(KM)</td>
+                </tr>
+                <tr>
+                    <td>Source</td>
+                    <td>Destination</td>
+                    <td>Distance(KM)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-3 col-lg-3">
+                                    <div class="form-group">
+                                        <label for="availableLoadTon_id">Expected Unloading Date:</label>
+                                        <input type="date" class="form-control" id="expectedUnloadingDate_id" placeholder="Expected Unloading Date" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label>Load Status</label>
+                                        <div class="d-flex justify-content-start">
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                                <input type="radio" class="custom-control-input" name="lsFullPartial" id="lsFull_id">
+                                                <label class="custom-control-label" for="lsFull_id">Full</label>
+                                            </div>
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                                <input type="radio" class="custom-control-input" name="lsFullPartial" id="lsPartial_id">
+                                                <label class="custom-control-label" for="lsPartial_id">Partial</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3 col-lg-3">
+                                    <div class="form-group">
+                                        <label for="availableLoadTon_id">Available Load (Ton)</label>
+                                        <input type="text" class="form-control" id="availableLoadTon_id" placeholder="Available Load (Ton)" />
+                                    </div>
+                                </div>
+
                             </div>
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="vehicleType_id">Company</label>
+                                        <select id="vehicleType_id" class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Shaurya Finance Pvt. Ltd.</option>
+                                            <option>Shaurya Electronic Shopping Store.</option>
+                                            <option>Shaurya Petroleum</option>
+                                            <option>Shaurya Studio</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="vehicleType_id">Branch</label>
+                                        <select id="vehicleType_id" class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Branch 1</option>
+                                            <option>Branch 2</option>
+                                            <option>Branch 3</option>
+                                            <option>Branch 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="vehicleType_id">Vehicle Group</label>
+                                        <select id="vehicleType_id" class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Shaurya Vehicle Group 1</option>
+                                            <option>Shaurya Vehicle Group 2</option>
+                                            <option>Shaurya Vehicle Group 3</option>
+                                            <option>Shaurya Vehicle Group 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
 
                     </form>

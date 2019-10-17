@@ -10,6 +10,19 @@ br{display:none;}
 .h4, h4 {font-size:1.1rem;}
 .trackBtnBg{font-size:1rem;}
 form .form-control{font-size:0.8rem;}
+
+.btn-primary{background-color:#2993d0; border-color:#2993d0;}
+.btn-primary:hover{background-color:#c6af38; border-color:#c6af38;}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{background-color:#c6af38; border-color:#c6af38;}
+
+.btn-outline-primary{color:#2993d0; border-color:#2993d0;}
+.btn-outline-primary:hover{background-color:#c6af38; border-color:#c6af38;}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {background-color:#c6af38; border-color:#c6af38;}
+
+.custom-control-input:checked~.custom-control-label::before {border-color:#2993d0; background-color:#2993d0;}
+
+
 label {font-weight:600;}
 a{color:#0a80c5;}
 .btn-link{color:#219fe8;}
@@ -472,7 +485,6 @@ label {font-weight:600;}
 .accordionSty .card-header:hover{background-color: #fefffb;}
 .accordionSty .card-body{background:#d7eff3; font-size:0.9rem;}
 
-
 .dropdown-item.active, .dropdown-item:active{color:#2892cf; background-color:transparent;}
 
 
@@ -484,12 +496,11 @@ label {font-weight:600;}
 .branchesSecMain .card .card-subtitle{ color:#444; font-size:0.9rem;}
 
 .modal-dialog .modal-content{box-shadow:0 0 5px #444; border-radius:10px;}
-.modal-dialog .modal-header{background-image: linear-gradient(to right, #28a9d1 0%, #c6af38 80%); padding:8px 15px; border-radius:10px 10px 0 0;}
+.modal-dialog .modal-header{background-image: linear-gradient(to right, #28a9d1 0%, #c6af38 80%); padding:8px 15px; border-radius:8px 8px 0 0;}
 .modal-dialog .modal-header .modal-title{color:#fff; font-weight:normal;}
 .modal-dialog .close{font-weight:500; color:#fff; opacity:1;}
 
 .loginPopSty .help-block{position:absolute; color:#dc3545; text-align:center; left:35%;}
-
 
 .usersSecMain .card{border:1px solid #a8d2ea; min-width:295px;}
 .usersSecMain .card .card-subtitle{ color:#444; font-size:0.9rem;}
@@ -501,7 +512,13 @@ label {font-weight:600;}
 .selectTitleBtn{border-bottom:1px solid #ddd; padding:5px;}
 .selectCompTitle{font-size:0.8rem; font-weight:500; margin-left:5px;}
 .companyCheckboxList label{font-weight:400;}
-.mt26{ margin-top:26px;}
+.mt26{margin-top:26px;}
+
+.tblSty{border-right:1px solid #ddd; border-bottom:1px solid #ddd;}
+.tblSty td, .tblSty th{border-left:1px solid #ddd; border-top:1px solid #ddd; padding:3px;}
+
+
+
 
 }
 
@@ -521,9 +538,7 @@ label {font-weight:600;}
 
 .modal{background:rgba(0,0,0,0.9);}
 
-.custom-select.is-invalid, .form-control.is-invalid,.was-validated .custom-select:invalid, .was-validated .form-control:invalid {
-    border-color: #dc3545;
-}
+.custom-select.is-invalid, .form-control.is-invalid,.was-validated .custom-select:invalid, .was-validated .form-control:invalid {border-color:#dc3545;}
 
 .homeCityImg{background-image:url(assets/img/homCity.png); position:absolute; top:-28px; height:60px; width:100%;}
 .animation{padding-top:30px; overflow:hidden;}
