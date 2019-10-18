@@ -15,41 +15,38 @@
             </div>
             <div>
                 <button type="button" class="btn btn-link loginBtn" (click)="showLoginModal()">Login</button>
-                <button type="button" class="btn btn-outline-primary registerBtn ml-1 pl-3 pr-3" data-toggle="modal"
-                    data-target="#registerPopup_id">Register</button>
+                <button type="button" class="btn btn-outline-primary ml-1 px-3"
+                    (click)="showRegisterModal()">Register</button>
             </div>
         </div>
-
-                
+    </div>
 </div>
-</div>
-
 <div class="container">
     <nav class="navbar navbar-expand-md navbar-expand-lg navbar-inverse bg-inverse m-0 p-0 navBarTR">
-                <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="logoWid-md" alt="logo" /></a>
-                <div class="navbarTogglerBtn">
-                    <button class="navbar-toggler" (click)="clickEvent()"><i class="fas fa-bars"></i></button>
-                </div>
-                <div class="navbar-collapse justify-content-end navbarCollapseMain"
-                    [ngClass]="status ? 'open' : 'closeB'" id="navbarNavDropdown">
-                    <div class="navbarCollapseInr">
-                        <ul class="navbar-nav">
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link" href="">Home</a>
-                            </li>
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link" href="">About</a>
-                            </li>
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link" routerLink="/faq">FAQ</a>
-                            </li>
-                            <li class="nav-item" routerLinkActive="active">
-                                <a class="nav-link" routerLink="/contactUs">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+        <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="logoWid-md" alt="logo" /></a>
+        <div class="navbarTogglerBtn">
+            <button class="navbar-toggler" (click)="clickEvent()"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="navbar-collapse justify-content-end navbarCollapseMain" [ngClass]="status ? 'open' : 'closeB'"
+            id="navbarNavDropdown">
+            <div class="navbarCollapseInr">
+                <ul class="navbar-nav">
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink="/faq">FAQ</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink="/contactUs">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>
 <!-- <div class="container">
     <nav class="navbar navbar-expand-md navbar-expand-lg navbar-inverse bg-inverse m-0 p-0 navBarTR">

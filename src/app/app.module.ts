@@ -27,6 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
     FaqComponent,
     ContactUsComponent,
     CompanyDetailsComponent,
+    LoginComponent,
+    RegisterUserComponent,
     
   ],
   imports: [
