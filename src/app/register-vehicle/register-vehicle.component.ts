@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-register-vehicle',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterVehicleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private commonService: CommonService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    //let temp = this.commonService.getUserObj();
+    debugger
+  }
 
   status: boolean = false;
   clickEvent(){
-    this.status = !this.status;       
+    //this.status = !this.status;       
   }
 
 }

@@ -1,12 +1,7 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-import { filter } from 'minimatch';
-import { map } from 'rxjs/operators';
-import { MessageService } from '../message.service';
-import { $ } from 'protractor';
+import { Component } from '@angular/core';
+import { Router, Event, NavigationStart } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-home',
@@ -14,99 +9,73 @@ import { $ } from 'protractor';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  constructor(private commonService: CommonService, private http: HttpClient, private router: Router) {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+        let isLoggedUserDetails: any = this.commonService.getUserAfterLoggedObj();
+        if (isLoggedUserDetails === undefined) {
+          let isLogged: any = this.commonService.getUserObj();
+          if (isLogged) {
+            this.commonService.setUserAfterLoggedObj({
+              aadharFile: null,
+              actionType: null,
+              appUpdates: null,
+              city: null,
+              cityName: null,
+              createdBy: "USR-16102019-11",
+              createdOn: "2019-10-18T11:45:12.2841588+00:00",
+              creditPoints: null,
+              department: null,
+              deviceID: null,
+              file1: null,
+              file2: null,
+              file3: null,
+              file4: null,
+              file5: null,
+              isDeleted: "false",
+              isPushNotification: false,
+              key: "USR-16102019-11",
+              kycDocumentLink: null,
+              modifiedBy: "USR-16102019-11",
+              modifiedOn: "2019-10-18T11:45:12.2841632+00:00",
+              organizationId: null,
+              panFile: null,
+              parent: null,
+              registrationID: null,
+              registrationToken: null,
+              state: null,
+              stateName: null,
+              userAadharNumber: null,
+              userAddress: null,
+              userAlternateMobileNumber: null,
+              userEmailD: null,
+              userFullName: null,
+              userID: "USR-16102019-11",
+              userIDs: null,
+              userLastLogin: null,
+              userMobileNumber: "9763111321",
+              userPANNumber: null,
+              userPassword: null,
+              userPhotoLink: null,
+              userRole: null,
+              userStatus: null,
+              userType: "Owner",
+              vehicleGroup: null,
+            });
 
-  constructor(private messageService: MessageService, private http: HttpClient, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) { }
-  frmUserOTP: FormGroup;
-  frmValidateOTP: FormGroup;
-  status: boolean = false;
-  isValidateOTP: boolean = false;
-  formSubmitted = false;
-  btnSubmitText: string = 'Generate OTP';
-  ngOnInit() {
-    this.frmUserOTP = new FormGroup(
-      {
-        //UserMobileNumber: new FormControl({value: 'Nancy', disabled: true}, Validators.required),
-        UserMobileNumber: new FormControl({ value: '', disabled: false }, Validators.required),
-        OTP: new FormControl({ value: '', disabled: this.isValidateOTP }),
-      });
-    this.isValidateOTP = false;
-    this.btnSubmitText = 'Generate OTP';
-  }
-
-  getBaseUrl() {
-    return 'https://api.rentatruck.shauryatechnosoft.com/';
-  }
-
-  clickEvent() {
-    this.status = !this.status;
-  }
-
-
-
-  onUserOTP() {
-    // if (this.frmUserOTP.valid) {
-    //   if (this.isValidateOTP == false) {
-    //     this.http.get(this.getBaseUrl() + 'masterdata/User/UserOTP?UserMobileNumber=' + this.frmUserOTP.value.UserMobileNumber + '')
-    //       .pipe(map(responseData => {
-    //         let resData = [];
-    //         if (responseData == null || responseData == '') { return resData } else {
-    //           for (const key in responseData) { resData.push(responseData[key]) } return resData;
-    //         }
-    //       }))
-    //       .subscribe(dt => {
-    //         this.isValidateOTP = true;
-    //         this.btnSubmitText = 'Verify';
-    //       }, error => {
-
-    //       })
-    //   }
-    //   else {
-    //     this.http.get(this.getBaseUrl() + 'masterdata/User/ValidateOTP?UserMobileNumber=' + this.frmUserOTP.value.UserMobileNumber + '&OTP=' + this.frmUserOTP.value.OTP)
-    //       .pipe(map(responseData => {
-            
-    //         let resData = [];
-    //         if (responseData == null || responseData == '') { return resData } else {
-    //           for (const key in responseData) { resData.push(responseData[key]) } return resData;
-    //         }
-    //       }))
-    //       .subscribe(dt => {
-    //         this.messageService.sendMessage('1');
-    //         this.closeLoginModal();
-    //         this.router.navigate(['/dashboard']);
-    //         localStorage.info = (JSON.stringify(dt))
-    //       }, error => {
-    //         //alert(error.error.Message + '\n' + error.message)
-    //       })
-    //   }
-    // }
-            this.messageService.sendMessage('1');
-            this.router.navigate(['/dashboard']);
-
-  }
-
-  closeLoginModal() {
-    document.getElementById("loginPopup_id").classList.remove('show');
-    document.getElementById("loginPopup_id").style.display = 'none';
-  }
-
-  onValidateOTP() {
-    this.http.get(this.getBaseUrl() + 'masterdata/User/UserOTP?UserMobileNumber=9763111321')
-      .subscribe(dt => {
-        
-        localStorage.info = (JSON.stringify(dt))
-        //this.checkservice.isUserlogedincheck.next(true)
-        //this.router.navigate(['/dashboard']);
-        document.getElementById('loginPopup_id').click();
-        this.router.navigate(['/dashboard']);
-      }, error => {
-        
-        alert(error.error.Message + '\n' + error.message)
+            //this.commonService.setHttp('get', 'User/' + isLogged.userMobileNumber, true, false);
+            //this.commonService.getHttp().then((responseData) => {
+            //  if (responseData.statusCode !== "200") {
+            //    this.router.navigate(['/home']);
+            //  }
+            //  else {
+            //    this.commonService.setUserAfterLoggedObj(responseData.responseData);
+            //  }
+            //});
+          }
+        }
       }
-      )
-
-    document.getElementById('loginPopup_id').click();
-
-    this.router.navigate(['/dashboard']);
+    });
   }
 }

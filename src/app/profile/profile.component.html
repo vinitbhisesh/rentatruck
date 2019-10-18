@@ -1,160 +1,150 @@
 <div class="dashbContentFlexH position-relative">
-
-    <div class="bodyBgGradColor"></div>
-
-    <div class="container-fluid">
-
-        <div class="contentAreaBox">
-
-
-            <div>
-                <div class="cardSty availabelVehicleCardSty open">
-
+  <div class="bodyBgGradColor"></div>
+  <div class="container-fluid">
+    <div class="contentAreaBox">
+      <div>
+        <div class="cardSty availabelVehicleCardSty open">
+          <div class="form-row">
+            <div class="col-sm-11 col-md-11 col-lg-11"></div>
+            <div class="col-sm-1 col-md-1 col-lg-1">
+              <div class="mt-3 mr-3"><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editProfile_id">Edit</button></div>
+            </div>
+          </div>
+          <div class="pb-3 pr-5 pl-5">
+            <div class="mb-3">
+              <div class="d-flex justify-content-center align-items-center flex-column">
+                <div class="position-relative">
+                  <img [attr.src]="userDetails.userPhotoLink ? userDetails.userPhotoLink : '../../assets/img/default_user_icon.png'" alt="{{userDetails.userFullName}}" class="profileImgSty" />
+                  <div class="editProfImgIcon"><i class="fas fa-pencil-alt"></i></div>
+                </div>
+                <div class="usernameTextSty pt-1 pb-1">{{userDetails.userFullName}}</div>
+              </div>
+            </div>
             <div class="form-row">
-                <div class="col-sm-11 col-md-11 col-lg-11"></div>
-                <div class="col-sm-1 col-md-1 col-lg-1">
-                    <div class="mt-3 mr-3"><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editProfile_id">Edit</button></div>
-                </div>
+              <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                <label>Mobile Number</label>
+                <span class="form-control">{{userDetails.userMobileNumber}}</span>
+              </div>
+              <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                <label>Alternate Mobile Number</label>
+                <span class="form-control">{{userDetails.userAlternateMobileNumber}}</span>
+              </div>
+              <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                <label>Email Id</label>
+                <span class="form-control">{{userDetails.userEmailD}}</span>
+              </div>
             </div>
-
-<form class="pb-3 pr-5 pl-5">
-
-<div class="mb-3">
-    <div class="d-flex justify-content-center align-items-center flex-column">
-        <div class="position-relative">
-            <img src="assets/img/avatar.jpg" alt="" class="profileImgSty" />
-            <div class="editProfImgIcon"><i class="fas fa-pencil-alt"></i></div>
+            <div class="form-row">
+              <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                <label>Address</label>
+                <span class="form-control">{{userDetails.userAddress}}</span>
+              </div>
+              <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                <label for="state_id">State</label>
+                <span class="form-control">{{userDetails.Name}}</span>
+              </div>
+              <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                <label for="city_id">City</label>
+                <span class="form-control">{{userDetails.cityName}}</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="usernameTextSty pt-1 pb-1">Vinit Bhise</div>
-    </div>
-</div>
-
-
-  <div class="form-row">
-    <div class="form-group col-sm-12 col-md-4 col-lg-4">
-      <label>Mobile Number</label>
-      <span class="form-control">+91 9604601273</span>
-    </div>
-    <div class="form-group col-sm-12 col-md-4 col-lg-4">
-      <label>Alternate Mobile Number</label>
-      <span class="form-control">+91 9804601250</span>
-    </div>
-    <div class="form-group col-sm-12 col-md-4 col-lg-4">
-      <label>Email Id</label>
-      <span class="form-control">abc@gmail.com</span>
+      </div>
     </div>
   </div>
-
-  <div class="form-row">
-    <div class="form-group col-sm-12 col-md-4 col-lg-4">
-    <label>Address</label>
-    <span class="form-control">1234 Main St</span>
-    </div>
-    <div class="form-group col-sm-12 col-md-4 col-lg-4">
-      <label for="state_id">State</label>
-    <span class="form-control">Maharashtra</span>
-    </div>
-    <div class="form-group col-sm-12 col-md-4 col-lg-4">
-      <label for="city_id">City</label>
-<span class="form-control">Pune</span>
-    </div>
-  </div>
-
-</form>
-
-                </div>
-
-
-
-
-
-
-            </div>
-        </div>
-
-    </div>
 </div>
-
 
 <!-- Modal -->
-<div class="modal fade" id="editProfile_id" tabindex="-1" role="dialog" aria-labelledby="editProfile_idTitle"
-    aria-hidden="true">
+<form [formGroup]="frmUpdateUser" (ngSubmit)="onSubmit()">
+  <div class="modal fade" id="editProfile_id" tabindex="-1" role="dialog" aria-labelledby="editProfile_idTitle"
+       aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editProfile_idTitle">Edit Profile</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div>
-
-                    <form>
-                        <div>
-
-                            <div class="form-row">
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="name_id">Name</label>
-                                        <input type="text" class="form-control" id="name_id" placeholder="Name" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="emailId_id">Email Id</label>
-                                        <input type="email" class="form-control" id="emailId_id" placeholder="Email Id" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="mobileNumber_id">Mobile Number</label>
-                                        <input type="number" class="form-control" id="mobileNumber_id" placeholder="Mobile Number" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="alternateMobNum_id">Alternate Mobile Number</label>
-                                        <input type="number" class="form-control" id="alternateMobNum_id" placeholder="Alternate Mobile Number" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="state_id">State</label>
-                                        <select id="state_id" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>...</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="city_id">City</label>
-                                        <select id="city_id" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>...</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </form>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editProfile_idTitle">Edit Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <div>
+            <div>
+              <div class="form-row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label for="userFullName">Full name</label>
+                    <input type="text" class="form-control" [disabled]="false" formControlName="userFullName" placeholder="e.g. Nitin Suresh Kute" />
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label for="userEmailD">Email ID</label>
+                    <input type="email" class="form-control" formControlName="userEmailD" placeholder="e.g. nitin123@example.com" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <div class="userNamAndPswF">
+                      <label for="userMobileNumber">Mobile Number</label>
+                      <input type="text" class="form-control" [ngClass]="{ 'is-invalid': frmUpdateUser.get('userMobileNumber').touched && !frmUpdateUser.get('userMobileNumber').valid }"
+                             formControlName="userMobileNumber" placeholder="e.g. 1234567890" minlength=10
+                             maxlength=10 />
+                    </div>
+                    <span class="help-block mb-2"
+                          *ngIf="!frmUpdateUser.get('userMobileNumber').valid && frmUpdateUser.get('userMobileNumber').touched">
+                      Enter valid mobile no.
+                    </span>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <div class="userNamAndPswF">
+                      <label for="AlternateMobileNumber">Alternate Mobile Number</label>
+                      <input type="text" class="form-control"
+                             [ngClass]="{ 'is-invalid': frmUpdateUser.get('userAlternateMobileNumber').touched && !frmUpdateUser.get('userAlternateMobileNumber').valid }"
+                             formControlName="userAlternateMobileNumber" placeholder="e.g. 1234567890" minlength=10
+                             maxlength=10 />
+                    </div>
+                    <span class="help-block mb-2"
+                          *ngIf="!frmUpdateUser.get('userAlternateMobileNumber').valid && frmUpdateUser.get('userAlternateMobileNumber').touched">
+                      Enter valid mobile no.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label for="state">State</label>
+                    <select class="form-control" (change)="onChangeState()" formControlName="state">
+                      <option value="" disabled>Select</option>
+                      <option *ngFor="let state of states" [ngValue]="state">{{state.lookupValue}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label for="city">City</label>
+                    <select class="form-control" formControlName="city">
+                      <option value="" disabled>Select</option>
+                      <option *ngFor="let city of cities" [ngValue]="city">{{city.lookupValue}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </div>
     </div>
-</div>
-
+  </div>
+</form>
 
 
 
@@ -355,7 +345,7 @@
                             <div><button type="button" class="btn btn-sm btn-outline-info mr-2"><i
                                         class="fas fa-pen"></i></button></div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>

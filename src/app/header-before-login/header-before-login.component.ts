@@ -20,4 +20,8 @@ export class HeaderBeforeLoginComponent implements OnInit {
     document.getElementById("loginPopup_id").classList.add('show');
     document.getElementById("loginPopup_id").style.display = 'block';
   }
+  showRegisterModal() {
+    document.getElementById("registerPopup_id").classList.add('show');
+    document.getElementById("registerPopup_id").style.display = 'block';
+  }
 }
