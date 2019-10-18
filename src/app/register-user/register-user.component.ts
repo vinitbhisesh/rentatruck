@@ -21,7 +21,7 @@ export class RegisterUserComponent implements OnInit {
     this.frmRegisterUser = new FormGroup({
       UserType: new FormControl('', Validators.required),
       UserMobileNumber: new FormControl({ value: '', disabled: false }, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])),
-      OTP: new FormControl({ value: '', disabled: this.isValidateOTP }),
+      OTP: new FormControl({ value: '', disabled: this.isValidateOTP })
     });
     this.isValidateOTP = false;
     this.btnSubmitText = 'Generate OTP';
@@ -29,41 +29,39 @@ export class RegisterUserComponent implements OnInit {
   onUserOTP() {
     if (this.frmRegisterUser.valid) {
       if (this.isValidateOTP == false) {
-        const httpOptions = {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json'
-          })
-        };
-        this.http.get(this.commonService.getBaseUrl() + 'masterdata/User/UserOTP?UserMobileNumber=' + this.frmRegisterUser.value.UserMobileNumber)
-          .subscribe(responseData => {
-            let resData: any = responseData;
-            if (resData.statusCode === "200") {
-              this.isValidateOTP = true;
-              this.btnSubmitText = 'Verify';
-            }
-          }, error => {
-            console.log(error);
+        let params = { ['UserMobileNumber']: this.frmRegisterUser.value.UserMobileNumber };
+        this.commonService.setHttp('get', 'User/UserOTP', false, params);
+        this.commonService.getHttp().then((responseData) => {
+          if (responseData.statusCode === "200") {
+            this.isValidateOTP = true;
+            this.btnSubmitText = 'Verify';
+          }
+          else {
+            console.log('Data not found');
             debugger
-          })
+          }
+          debugger;
+        });
       }
       else {
-        this.http.get(this.commonService.getBaseUrl() + 'masterdata/User/ValidateOTP?UserMobileNumber=' + this.frmRegisterUser.value.UserMobileNumber + '&OTP=' + this.frmRegisterUser.value.OTP)
-          .subscribe(responseData => {
-            let resData: any = responseData;
-            if (resData.statusCode === "200") {
-              localStorage.setItem("userDetails", JSON.stringify(resData.responseData));
-              this.onRegisterUser();
-              //this.commonService.sendMessage('1');
-              //this.router.navigate(['/dashboard']);
-            }
-          }, error => {
-            console.log(error);
-            debugger
-          })
+        let params = { ['UserMobileNumber']: this.frmRegisterUser.value.UserMobileNumber, ['OTP']: this.frmRegisterUser.value.OTP };
+        this.commonService.setHttp('get', 'User/ValidateOTP', false, params);
+        this.commonService.getHttp().then((responseData) => {
+          if (responseData.statusCode === "200") {
+            this.commonService.setUserObj({ UserMobileNumber: this.frmRegisterUser.value.UserMobileNumber });
+            localStorage.setItem("userDetails", JSON.stringify(responseData.responseData));
+            this.onRegisterUser();
+            //this.commonService.sendMessage('1');
+            //this.router.navigate(['/dashboard']);
+          }
+          else {
+            console.log('Data not found');
+            debugger;
+          }
+          debugger;
+        });
       }
     }
-    // this.commonService.sendMessage('1');
-    // this.router.navigate(['/dashboard']);
   }
   onGoToLogin() {
     document.getElementById("loginPopup_id").classList.add('show');
@@ -72,39 +70,30 @@ export class RegisterUserComponent implements OnInit {
     document.getElementById("registerPopup_id").style.display = 'none';
   }
   onRegisterUser() {
-    let params: object = {
-      userMobileNumber: this.frmRegisterUser.value.UserMobileNumber,
-      userType: this.frmRegisterUser.value.UserType
-    }
-
-    let temp = JSON.parse(localStorage.getItem("userDetails"));
-
-    let options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-        'Authorization': "bearer " + temp.idToken,
-        'Accept': "application/json"
-      })
+    let params = {
+      ['UserType']: this.frmRegisterUser.value.UserType,
+      ['UserMobileNumber']: this.frmRegisterUser.value.UserMobileNumber,
+      ['OTP']: this.frmRegisterUser.value.OTP
     };
-    this.http.post(this.commonService.getBaseUrl() + 'masterdata/User/RegisterUser', params, options)
-      .subscribe(responseData => {
-        let resData: any = responseData;
-        if (resData.statusCode === "200") {
-          this.commonService.setUserObj({
-            UserID: resData.responseData,
-            UserMobileNumber: this.frmRegisterUser.value.UserMobileNumber,
-            OTP: this.frmRegisterUser.value.OTP
-          });
-          this.commonService.sendMessage('1');
-          this.router.navigate(['/dashboard']);
-        }
-        else if (resData.statusCode === "409") {
-          alert(resData.statusMessage);
-        }
-      }, error => {
-        console.log(error);
-        debugger
-      })
+    this.commonService.setHttp('post', 'User/RegisterUser', true, params);
+    this.commonService.getHttp().then((responseData) => {
+      if (responseData.statusCode === "200") {
+        this.commonService.setUserObj({
+          UserID: responseData.responseData,
+          UserMobileNumber: this.frmRegisterUser.value.UserMobileNumber,
+          OTP: this.frmRegisterUser.value.OTP
+        });
+        this.commonService.sendMessage('1');
+        this.router.navigate(['/dashboard']);
+      }
+      else if (responseData.statusCode === "409") {
+        alert(responseData.statusMessage);
+      }
+      else {
+        console.log('Data not found');
+      }
+      debugger;
+    });
   }
   onCloseRegisterModal() {
     document.getElementById("registerPopup_id").classList.remove('show');

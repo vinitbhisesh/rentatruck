@@ -13,6 +13,8 @@ export class AppComponent implements OnDestroy {
   title: string = 'rentatruck';
   router: string;
   isLoggedIn: boolean = false;
+  messages: any[] = [];
+  subscription: Subscription;
 
   constructor(private _router: Router, private commonService: CommonService) {
     this.router = _router.url;
@@ -29,15 +31,11 @@ export class AppComponent implements OnDestroy {
     });
   }
 
-
   ngOnInit() {
     AOS.init({
       once: true, // whether animation should happen only once - while scrolling down
     });
   }
-
-  messages: any[] = [];
-  subscription: Subscription;
 
   ngOnDestroy() {
     // unsubscribe to ensure no memory leaks

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
-import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -10,151 +9,121 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userDetails: object;
+  userDetails: any;
   frmUpdateUser: FormGroup;
+  states: [] = [];
+  cities: [] = [];
 
-  constructor(private commonService: CommonService, private http: HttpClient, private router: Router) {
+  constructor(private commonService: CommonService, private http: HttpClient) {
     this.userDetails = this.commonService.getUserAfterLoggedObj();
-
-    //aadharFile: null
-    //actionType: null
-    //appUpdates: null
-    //city: null
-    //cityName: null
-    //createdBy: "USR-16102019-11"
-    //createdOn: "2019-10-17T05:22:51.5354989+00:00"
-    //creditPoints: null
-    //department: null
-    //deviceID: null
-    //file1: null
-    //file2: null
-    //file3: null
-    //file4: null
-    //file5: null
-    //isDeleted: "false"
-    //isPushNotification: false
-    //key: "USR-16102019-11"
-    //kycDocumentLink: null
-    //modifiedBy: "USR-16102019-11"
-    //modifiedOn: "2019-10-17T05:22:51.5355043+00:00"
-    //organizationId: null
-    //panFile: null
-    //parent: null
-    //registrationID: null
-    //registrationToken: null
-    //state: null
-    //stateName: null
-    //userAadharNumber: null
-    //userAddress: null
-    //userAlternateMobileNumber: null
-    //userEmailD: null
-    //userFullName: null
-    //userID: "USR-16102019-11"
-    //userIDs: null
-    //userLastLogin: null
-    //userMobileNumber: "9763111321"
-    //userPANNumber: null
-    //userPassword: null
-    //userPhotoLink: null
-    //userRole: null
-    //userStatus: null
-    //userType: "Owner"
-    //vehicleGroup: null
-    if (this.userDetails === undefined) {
-      this.router.navigate(['/home']);
-    }
-
-
+    this.commonService.setHttp('get', 'Lookup/State', true, false);
+    this.commonService.getHttp().then((responseData) => {
+      if (responseData.statusCode === "200") {
+        this.states = responseData.responseData;
+      }
+      else if (responseData.statusCode === "409") {
+        alert('States not bind');
+      }
+      else {
+        console.log('Data not found');
+      }
+    })
   }
 
+
   ngOnInit() {
-    this.frmUpdateUser = new FormGroup(
-      {
-        userFullName: new FormControl({ value: '', disabled: false }, Validators.required),
-        userEmailD: new FormControl({ value: '' }),
-        userMobileNumber: new FormControl({ value: '' }, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])),
-        userAlternateMobileNumber: new FormControl({ value: '' }, Validators.compose([Validators.minLength(10), Validators.maxLength(10)])),
-        state: new FormControl({ value: '', disabled: false }, Validators.required),
-        city: new FormControl({ value: '', disabled: false }, Validators.required),
-      });
+    this.frmUpdateUser = new FormGroup({
+      userFullName: new FormControl({ value: this.userDetails.userFullName || '', disabled: false }, Validators.required),
+      userEmailD: new FormControl({ value: this.userDetails.userEmailD || '' }),
+      userMobileNumber: new FormControl({ value: this.userDetails.userMobileNumber || '' }, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])),
+      userAlternateMobileNumber: new FormControl({ value: this.userDetails.userAlternateMobileNumber || '' }, Validators.compose([Validators.minLength(10), Validators.maxLength(10)])),
+      state: new FormControl({ value: this.userDetails.state || '', disabled: false }, Validators.required),
+      city: new FormControl({ value: this.userDetails.city || '', disabled: false }, Validators.required)
+    });
   }
 
   onSubmit() {
-    let temp = JSON.parse(localStorage.getItem("userDetails"));
-
-    let params = new HttpParams();
-    //params.set('city', this.frmUpdateUser.city);
-    //params.set('createdBy', this.userDetails.createdBy);
-    //params.set('createdOn', this.userDetails.createdOn);
-    //params.set('modifiedBy', this.userDetails.modifiedBy);
-    //params.set('modifiedOn', this.userDetails.modifiedOn);
-    //params.set('state', this.frmUpdateUser.state);
-    //params.set('userAddress', this.frmUpdateUser.userAddress);
-    //params.set('userAlternateMobileNumber', this.frmUpdateUser.userAlternateMobileNumber);
-    //params.set('userEmailD', this.frmUpdateUser.userEmailD);
-    //params.set('userFullName', this.frmUpdateUser.userFullName);
-    //params.set('userMobileNumber', this.frmUpdateUser.userMobileNumber);
-    //params.set('userPhotoLink', this.frmUpdateUser.userPhotoLink);
-    ////params.set('aadharFile', this.frmUpdateUser.aadharFile);
-    ////params.set('actionType', this.frmUpdateUser.actionType);
-    ////params.set('appUpdates', this.frmUpdateUser.appUpdates);
-    ////params.set('cityName', this.frmUpdateUser.cityName);
-    ////params.set('creditPoints', this.frmUpdateUser.creditPoints);
-    ////params.set('department', this.frmUpdateUser.department);
-    ////params.set('deviceID', this.frmUpdateUser.deviceID);
-    ////params.set('file1', this.frmUpdateUser.file1);
-    ////params.set('file2', this.frmUpdateUser.file2);
-    ////params.set('file3', this.frmUpdateUser.file3);
-    ////params.set('file4', this.frmUpdateUser.file4);
-    ////params.set('file5', this.frmUpdateUser.file5);
-    ////params.set('isDeleted', this.frmUpdateUser.isDeleted);
-    ////params.set('isPushNotification', this.frmUpdateUser.isPushNotification);
-    ////params.set('key', this.frmUpdateUser.key);
-    ////params.set('kycDocumentLink', this.frmUpdateUser.kycDocumentLink);
-    ////params.set('organizationId', this.frmUpdateUser.organizationId);
-    ////params.set('panFile', this.frmUpdateUser.panFile);
-    ////params.set('parent', this.frmUpdateUser.parent);
-    ////params.set('registrationID', this.frmUpdateUser.registrationID);
-    ////params.set('registrationToken', this.frmUpdateUser.registrationToken);
-    ////params.set('stateName', this.frmUpdateUser.stateName);
-    ////params.set('userAadharNumber', this.frmUpdateUser.userAadharNumber);
-    ////params.set('userID', this.frmUpdateUser.userID);
-    ////params.set('userIDs', this.frmUpdateUser.userIDs);
-    ////params.set('userLastLogin', this.frmUpdateUser.userLastLogin);
-    ////params.set('userPANNumber', this.frmUpdateUser.userPANNumber);
-    ////params.set('userPassword', this.frmUpdateUser.userPassword);
-    ////params.set('userRole', this.frmUpdateUser.userRole);
-    ////params.set('userStatus', this.frmUpdateUser.userStatus);
-    ////params.set('userType', this.frmUpdateUser.userType);
-    ////params.set('vehicleGroup', this.frmUpdateUser.vehicleGroup);
-
-    let options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-        'Authorization': "bearer " + temp.idToken,
-        'Accept': "application/json"
-      }),
-      params: params
-    };
-
-    this.http.put(this.commonService.getBaseUrl() + 'masterdata/User', options)
-      .subscribe(responseData => {
-        let resData: any = responseData;
-        if (resData.statusCode !== "200") {
-          this.router.navigate(['/home']);
+    if (this.frmUpdateUser.valid) {
+      debugger
+      let params = {
+        ['userMobileNumber']: this.frmUpdateUser.value.userMobileNumber,
+        ['userFullName']: this.frmUpdateUser.value.userFullName,
+        ['city']: this.frmUpdateUser.value.city.key,
+        ['createdBy']: this.userDetails.createdBy,
+        ['modifiedBy']: this.userDetails.modifiedBy,
+        ['state']: this.frmUpdateUser.value.state.key,
+        ['userAlternateMobileNumber']: this.frmUpdateUser.value.userAlternateMobileNumber,
+        ['userEmailD']: this.frmUpdateUser.value.userEmailD,
+        //['userPhotoLink']: this.frmUpdateUser.value.userPhotoLink || '',
+        ['parent']: this.userDetails.parent,
+        //['userAddress']: this.frmUpdateUser.value.userAddress,
+        //['modifiedOn']: this.frmUpdateUser.value.modifiedOn,
+        //['createdOn']: this.frmUpdateUser.value.createdOn,
+        //['userID']: this.frmUpdateUser.value.userID,
+        //['aadharFile']: this.frmUpdateUser.value.aadharFile,
+        //['actionType']: this.frmUpdateUser.value.actionType,
+        //['appUpdates']: this.frmUpdateUser.value.appUpdates,
+        //['cityName']: this.frmUpdateUser.value.cityName,
+        //['creditPoints']: this.frmUpdateUser.value.creditPoints,
+        //['department']: this.frmUpdateUser.value.department,
+        //['deviceID']: this.frmUpdateUser.value.deviceID,
+        //['file1']: this.frmUpdateUser.value.file1,
+        //['file2']: this.frmUpdateUser.value.file2,
+        //['file3']: this.frmUpdateUser.value.file3,
+        //['file4']: this.frmUpdateUser.value.file4,
+        //['file5']: this.frmUpdateUser.value.file5,
+        //['isDeleted']: this.frmUpdateUser.value.isDeleted,
+        //['isPushNotification']: this.frmUpdateUser.value.isPushNotification,
+        //['key']: this.frmUpdateUser.value.key,
+        //['kycDocumentLink']: this.frmUpdateUser.value.kycDocumentLink,
+        //['organizationId']: this.frmUpdateUser.value.organizationId,
+        //['panFile']: this.frmUpdateUser.value.panFile,
+        //['registrationID']: this.frmUpdateUser.value.registrationID,
+        //['registrationToken']: this.frmUpdateUser.value.registrationToken,
+        //['stateName']: this.frmUpdateUser.value.stateName,
+        //['userAadharNumber']: this.frmUpdateUser.value.userAadharNumber,
+        //['userIDs']: this.frmUpdateUser.value.userIDs,
+        //['userLastLogin']: this.frmUpdateUser.value.userLastLogin,
+        //['userPANNumber']: this.frmUpdateUser.value.userPANNumber,
+        //['userPassword']: this.frmUpdateUser.value.userPassword,
+        //['userRole']: this.frmUpdateUser.value.userRole,
+        //['userStatus']: this.frmUpdateUser.value.userStatus,
+        //['userType']: this.frmUpdateUser.value.userType,
+        //['vehicleGroup']: this.frmUpdateUser.value.vehicleGroup
+      };
+      this.commonService.setHttp('put', 'User', true, params);
+      this.commonService.getHttp().then((responseData) => {
+        if (responseData.statusCode === "200") {
+          this.commonService.setUserObj({
+            UserID: responseData.responseData,
+            UserMobileNumber: this.frmUpdateUser.value.UserMobileNumber,
+            OTP: this.frmUpdateUser.value.OTP
+          });
+          this.commonService.sendMessage('1');
+        }
+        else if (responseData.statusCode === "409") {
+          alert(responseData.statusMessage);
         }
         else {
-          this.commonService.setUserAfterLoggedObj(resData.responseData);
+          console.log('Data not found');
         }
-      }, error => {
-        console.log(error);
-        debugger
-      })
+        debugger;
+      });
+    }
+    //let temp = JSON.parse(localStorage.getItem("userDetails"));
   }
-
-  onChangeState(e) {
-    this.frmUpdateUser.state.setValue(e.target.value, {
-      onlySelf: true
+  onChangeState() {
+    this.commonService.setHttp('get', 'Lookup/GetCitiesByStateID/' + this.frmUpdateUser.value.state.key, true, false);
+    this.commonService.getHttp().then((responseData) => {
+      if (responseData.statusCode === "200") {
+        this.cities = responseData.responseData;
+      }
+      else if (responseData.statusCode === "409") {
+        alert('States not bind');
+      }
+      else {
+        console.log('Data not found');
+      }
     })
   }
 }

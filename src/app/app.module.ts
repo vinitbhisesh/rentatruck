@@ -24,12 +24,12 @@ import { LiveAvailableTrucksComponent } from './live-available-trucks/live-avail
 import { NotificationComponent } from './notification/notification.component';
 import { FaqComponent } from './faq/faq.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
-
+//import { HttpServiceService } from './http-service.service';
 
 @NgModule({
   declarations: [
@@ -59,17 +59,17 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     CompanyDetailsComponent,
     LoginComponent,
     RegisterUserComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
+  //providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpServiceService, multi: true }],
   providers: [],
-  bootstrap: [AppComponent, ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   
