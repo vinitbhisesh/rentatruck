@@ -30,6 +30,8 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 //import { HttpServiceService } from './http-service.service';
+import { VehicleGroupComponent } from './vehicle-group/vehicle-group.component';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     CompanyDetailsComponent,
     LoginComponent,
     RegisterUserComponent,
+    VehicleGroupComponent,
+    
   ],
   imports: [
     BrowserModule,
