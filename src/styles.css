@@ -326,7 +326,7 @@ br{display:block;}
 .breadcrumbMain{background-color:#fff; border-bottom:1px solid #d6d4d4; box-shadow:0 3px 5px #ccc inset;}
 .breadcrumbMain ol{margin-bottom:0; background-color: transparent; border-radius:0; padding:8px 0;}
 .dashbContentFlexH{padding:15px 0;}
-.contentAreaBox{background-color:#fff; padding:10px; border-radius:10px; position:relative; box-shadow:0 0px 5px #bdbdbd; z-index:1; height: calc(100vh - 155px);}
+.contentAreaBox{background-color:#fff; padding:10px; height:calc(100vh - 117px); border-radius:10px; position:relative; box-shadow:0 0px 5px #bdbdbd; z-index:1;}
 
 .dashboardPgMain .form-group{margin-bottom:0.8rem;}
 .dashboardPgMain label{margin-bottom: .3rem; margin-left: .2rem;}
@@ -346,9 +346,9 @@ body .wdthAuto{width:auto;}
 .detailsScrollBarV{max-height:440px; overflow-y:auto; padding-right:10px; margin-bottom:10px;}
 .btnIconStyDetails button{border:1px solid #98b8d4;}
 .searchBoxSty{position:relative; margin-right:10px;}
-.searchBoxSty input{display:block; width:100%; padding:8px 15px; border:1px solid #c7c7c7; border-radius:20px; font-size:15px;}
+.searchBoxSty input{display:block; width:100%; padding:7px 15px; border:1px solid #c7c7c7; border-radius:20px; font-size:15px;}
 .searchBoxSty input:focus{border-color:#2892cf; outline:none;}
-.searchBoxSty button{position:absolute; top:5px; right:15px; background-color:transparent; border:none; width:30px; height:30px; font-size:17px; color:#2892cf;}
+.searchBoxSty button{position:absolute; top:3px; right:15px; background-color:transparent; border:none; width:30px; height:30px; font-size:17px; color:#2892cf;}
 .paddingRight10Sty{padding-right:8px;}
 .heightAutoSty{height:auto;}
 .breadcrumbMain{margin-top:52px;}
@@ -517,8 +517,11 @@ label {font-weight:600;}
 .tblSty{border-right:1px solid #ddd; border-bottom:1px solid #ddd;}
 .tblSty td, .tblSty th{border-left:1px solid #ddd; border-top:1px solid #ddd; padding:3px;}
 
+.pageTitleSty{font-size:1.1rem; color:#1f1d1d; margin:0;}
 
+body{padding-top:52px;}
 
+.minheight41Sty{min-height:41px;}
 
 }
 
@@ -535,8 +538,6 @@ label {font-weight:600;}
 @media (max-width: 767.98px) {
 .navbarCollapseMain{transform: translateX(-100%); box-shadow:0 5px 5px #333;}
 }
-
-.modal{background:rgba(0,0,0,0.9);}
 
 .custom-select.is-invalid, .form-control.is-invalid,.was-validated .custom-select:invalid, .was-validated .form-control:invalid {border-color:#dc3545;}
 
@@ -563,3 +564,8 @@ label {font-weight:600;}
 .deliveryTruckOne{background:url(assets/img/deliveryTruckBlueT.png) no-repeat top left; width:128px; height:66px; position:absolute; top:-65%; animation:deliveryTruckOne 15s infinite linear; -webkit-animation:deliveryTruckOne 15s infinite linear;}
 .deliveryTruckTwo{background:url(assets/img/truckReturn.png) no-repeat top left; width:128px; height:70px; position:absolute; top:-16%; animation: deliveryTruckTwo 25s infinite linear; -webkit-animation: deliveryTruckTwo 25s infinite linear;}
 .deliveryTruckThree{background:url(assets/img/deliveryTruckYellow.png) no-repeat top left; width:134px; height:66px; position:absolute; top:-54%; animation: deliveryTruckThree 17s infinite linear; -webkit-animation: deliveryTruckThree 17s infinite linear;}
+
+
+
+.modal-backdrop.show {opacity:0.7;}
+.modalOpacitySty{background-color:rgba(0,0,0,0.7);}

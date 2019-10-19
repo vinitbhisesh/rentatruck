@@ -12,7 +12,6 @@ export class RegisterVehicleComponent implements OnInit {
 
   ngOnInit() {
     //let temp = this.commonService.getUserObj();
-    debugger
   }
 
   status: boolean = false;

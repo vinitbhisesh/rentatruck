@@ -1,12 +1,10 @@
-<div class="modal fade" id="registerPopup_id" tabindex="-1" role="dialog" aria-labelledby="registerPopupTitle"
-    aria-hidden="true">
+<div class="modal fade modalOpacitySty" data-backdrop="static" id="registerPopup_id" tabindex="-1" role="dialog" aria-labelledby="registerPopupTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content formMainLR">
             <div class="modal-header">
                 <h5 class="modal-title popupTitleLR">Register With OTP</h5>
                 <div class="closeBtnLR">
-                    <button type="button" class="close" (click)="onCloseRegisterModal()" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" (click)="onCloseRegisterModal()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
             </div>
             <div class="modal-body">
@@ -14,23 +12,15 @@
                 <div>
                   <div class="d-flex justify-content-center mb-3 custTransRadio">
                     <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" value="Customer" id="registerTypeCustomer_id"
-                             formControlName="UserType" class="custom-control-input">
+                      <input type="radio" value="Customer" id="registerTypeCustomer_id" formControlName="UserType" class="custom-control-input">
                       <label class="custom-control-label" for="registerTypeCustomer_id">Customer</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" value="Owner" id="registerTypeTransporter_id"
-                             formControlName="UserType" class="custom-control-input">
-                      <label class="custom-control-label" for="registerTypeTransporter_id">
-                        Transporter /
-                        Agent
-                      </label>
+                      <input type="radio" value="Owner" id="registerTypeTransporter_id" formControlName="UserType" class="custom-control-input" />
+                      <label class="custom-control-label" for="registerTypeTransporter_id">Transporter / Agent</label>
                     </div>
                   </div>
-                  <p class="onetimepswMsgSty">
-                    We will send you an <strong>One Time Password</strong> <br /> on
-                    this mobile number
-                  </p>
+                  <p class="onetimepswMsgSty">An <strong>OTP</strong> will be send to your mobile number</p>
                   <div class="form-group">
                     <div class="userNamAndPswF">
                       <input type="text" class="form-control" [disabled]="false"
@@ -38,15 +28,11 @@
                              formControlName="UserMobileNumber" placeholder="e.g. 1234567890" minlength=10
                              maxlength=10 />
                     </div>
-                    <span class="help-block mb-2"
-                          *ngIf="!frmRegisterUser.get('UserMobileNumber').valid && frmRegisterUser.get('UserMobileNumber').touched">
-                      Enter valid mobile no.
-                    </span>
+                    <span class="help-block mb-2" *ngIf="!frmRegisterUser.get('UserMobileNumber').valid && frmRegisterUser.get('UserMobileNumber').touched">Enter valid mobile no.</span>
                   </div>
-                  <span class="text-center pt-2 mb-1">
-                    Already have an account?
-                    <button type="button" class="btn btn-link" (click)="onGoToLogin()">Login</button>
-                  </span>
+
+<div class="text-center pt-2 mb-1 d-flex justify-content-center align-items-center"><div>Already have an account?</div> <div><button type="button" class="btn btn-link" (click)="onGoToLogin()">Login</button></div></div>
+
                 </div>
                 <div *ngIf="isValidateOTP">
                   <div class="form-group">

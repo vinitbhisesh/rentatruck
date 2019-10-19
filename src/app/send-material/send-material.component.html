@@ -5,16 +5,19 @@
     <div class="container-fluid">
 
         <div class="contentAreaBox">
-            <div class="form-row">
-                <div class="col-sm-11 col-md-11 col-lg-11">
-                    <div class="searchBoxSty mb-2">
+
+            <div class="form-row align-items-center mb-2 minheight41Sty">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <h1 class="pageTitleSty">Send Material</h1>
+                </div>
+                <div class="col-sm-12 col-md-5 col-lg-5">
+                    <div class="searchBoxSty">
                         <input type="text" placeholder="Search..">
                         <button type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
-                <div class="col-sm-1 col-md-1 col-lg-1">
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
-                        data-target="#sendmaterial_id">Send</button>
+                <div class="col-sm-12 col-md-1 col-lg-1">
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#sendmaterial_id">Send</button>
                 </div>
             </div>
 
@@ -26,8 +29,6 @@
                 <button type="button" class="btn btn-primary">Yes</button>
             </div>
         </div>
-
-
 
             <div class="detailsScrollBarV">
                 <div class="cardSty availabelVehicleCardSty" [ngClass]="status ? 'open' : 'closeB'">
@@ -146,7 +147,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="sendmaterial_id" tabindex="-1" role="dialog" aria-labelledby="sendmaterial_idTitle" aria-hidden="true">
+<div class="modal fade" data-backdrop="static" id="sendmaterial_id" tabindex="-1" role="dialog" aria-labelledby="sendmaterial_idTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -327,7 +328,7 @@
 
 
 <!-- Request For Booking Modal Start -->
-<div class="modal fade" id="requestForBooking" tabindex="-1" role="dialog" aria-labelledby="requestForBookingLabel" aria-hidden="true">
+<div class="modal fade" data-backdrop="static" id="requestForBooking" tabindex="-1" role="dialog" aria-labelledby="requestForBookingLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -371,7 +372,7 @@
 
 
 <!-- Request For Quotation Modal Start -->
-<div class="modal fade" id="requestForQuotation" tabindex="-1" role="dialog" aria-labelledby="requestForQuotationLabel" aria-hidden="true">
+<div class="modal fade" data-backdrop="static" id="requestForQuotation" tabindex="-1" role="dialog" aria-labelledby="requestForQuotationLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

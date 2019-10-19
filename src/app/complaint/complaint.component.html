@@ -5,19 +5,23 @@
     <div class="container-fluid">
 
         <div class="contentAreaBox">
-            <div class="form-row">
-                <div class="col-sm-11 col-md-11 col-lg-11">
-                    <div class="searchBoxSty mb-2">
+            <div class="form-row align-items-center mb-2">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <h1 class="pageTitleSty">Complaints</h1>
+                </div>
+                <div class="col-sm-12 col-md-5 col-lg-5">
+                    <div class="searchBoxSty">
                         <input type="text" placeholder="Search..">
                         <button type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
-                <div class="col-sm-1 col-md-1 col-lg-1">
+                <div class="col-sm-12 col-md-1 col-lg-1">
                     <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#newComplaint_id">Add</button>
                 </div>
             </div>
 
-            <div class="detailsScrollBarV">
+            <div class="detailsScrollBarV"> 
+                
 <div class="cardSty availabelVehicleCardSty" [ngClass]="status ? 'open' : 'closeB'">
 
                                 <div class="mainList">
@@ -27,6 +31,10 @@
                                                 <div class="lblSpanSty">
                                                     <label>Complaint Id: </label>
                                                     <span>1556448</span>
+                                                </div>
+                                                <div class="lblSpanSty">
+                                                    <label>Complainer: </label>
+                                                    <span>Vinit Bhise</span>
                                                 </div>
                                                 <div class="lblSpanSty">
                                                     <label>Complaint Type: </label>
@@ -60,7 +68,13 @@
 
                                 </div>
 
-                            </div>                
+                            </div>  
+
+
+<!-- <app-complaint-chat></app-complaint-chat> -->
+
+
+
             </div>
         </div>
 
@@ -69,7 +83,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="newComplaint_id" tabindex="-1" role="dialog" aria-labelledby="newComplaint_idTitle" aria-hidden="true">
+<div class="modal fade" data-backdrop="static" id="newComplaint_id" tabindex="-1" role="dialog" aria-labelledby="newComplaint_idTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
