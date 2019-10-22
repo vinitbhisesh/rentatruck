@@ -48,14 +48,18 @@ export class ProfileComponent implements OnInit {
       let params = {
         ['userMobileNumber']: this.frmUpdateUser.value.userMobileNumber,
         ['userFullName']: this.frmUpdateUser.value.userFullName,
-        ['city']: this.frmUpdateUser.value.city.key,
-        ['createdBy']: this.userDetails.createdBy,
-        ['modifiedBy']: this.userDetails.modifiedBy,
-        ['state']: this.frmUpdateUser.value.state.key,
         ['userAlternateMobileNumber']: this.frmUpdateUser.value.userAlternateMobileNumber,
         ['userEmailD']: this.frmUpdateUser.value.userEmailD,
+        ['organizationId']: [{ "organizationID": "ORG-16102019-1"}],
+        //organizationId: [UserOrganization{ "ORG-16102019-1" }]
+        ['userType']: this.userDetails.userType || 'Owner',
+        ['department']: this.userDetails.department || 'DPT-16102019-1',
+        ['city']: this.frmUpdateUser.value.city.key,
+        ['state']: this.frmUpdateUser.value.state.key,
+        ['createdBy']: this.userDetails.createdBy,
+        ['modifiedBy']: this.userDetails.modifiedBy,
+        //['parent']: this.userDetails.parent || this.userDetails.createdBy,
         //['userPhotoLink']: this.frmUpdateUser.value.userPhotoLink || '',
-        ['parent']: this.userDetails.parent,
         //['userAddress']: this.frmUpdateUser.value.userAddress,
         //['modifiedOn']: this.frmUpdateUser.value.modifiedOn,
         //['createdOn']: this.frmUpdateUser.value.createdOn,
@@ -65,7 +69,6 @@ export class ProfileComponent implements OnInit {
         //['appUpdates']: this.frmUpdateUser.value.appUpdates,
         //['cityName']: this.frmUpdateUser.value.cityName,
         //['creditPoints']: this.frmUpdateUser.value.creditPoints,
-        //['department']: this.frmUpdateUser.value.department,
         //['deviceID']: this.frmUpdateUser.value.deviceID,
         //['file1']: this.frmUpdateUser.value.file1,
         //['file2']: this.frmUpdateUser.value.file2,
@@ -88,7 +91,6 @@ export class ProfileComponent implements OnInit {
         //['userPassword']: this.frmUpdateUser.value.userPassword,
         //['userRole']: this.frmUpdateUser.value.userRole,
         //['userStatus']: this.frmUpdateUser.value.userStatus,
-        //['userType']: this.frmUpdateUser.value.userType,
         //['vehicleGroup']: this.frmUpdateUser.value.vehicleGroup
       };
       this.commonService.setHttp('put', 'User', true, params);
