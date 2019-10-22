@@ -25,46 +25,47 @@ export class LoginComponent implements OnInit {
     this.btnSubmitText = 'Generate OTP';
   }
   onUserOTP() {
-    if (this.frmUserOTP.valid) {
-      if (this.isValidateOTP == false) {
-        let params = { ['UserMobileNumber']: this.frmUserOTP.value.UserMobileNumber };
-        this.commonService.setHttp('get', 'User/UserOTP', false, params);
-        this.commonService.getHttp().then((responseData) => {
-          if (responseData.statusCode === "200") {
-            this.isValidateOTP = true;
-            this.btnSubmitText = 'Verify';
-          }
-          else {
-            console.log('Data not found');
-            debugger
-          }
-        });
-      }
-      else {
-        let params = { ['UserMobileNumber']: this.frmUserOTP.value.UserMobileNumber, ['OTP']: this.frmUserOTP.value.OTP };
-        this.commonService.setHttp('get', 'User/ValidateOTP', false, params);
-        this.commonService.getHttp().then((responseData) => {
-          if (responseData.statusCode === "200") {
-            this.commonService.setUserObj(responseData.responseData);
-            this.commonService.sendMessage('1');
-            this.router.navigate(['/dashboard']);
-          }
-          else {
-            console.log('Data not found');
-            debugger;
-          }
-        });
-      }
-    }
-    //this.commonService.setUserObj({
-    //  applicationID: "oekHvUAzER5oyBK",
-    //  idToken: "eyJraWQiOiJzRFZCMW1yYjdISWEwWUtnOCtpaVU1TmRud1pPaStjcXZGMzk5dktkem93PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzYjA4ZGNkMi05MDkyLTQ4MWQtOGI2Mi1hM2QwMDJkODk0OGQiLCJhdWQiOiI0Z3NrNmNuZWxoZXBrZXB0bWZuaTNvaGFuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIzYTE4ZWNmOS1iYzMyLTQzNjQtYmFlNi0zNmI0NWRhMWVlNTAiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTU3MTQwMzE5OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV9vdkN3Qm02SzEiLCJjb2duaXRvOnVzZXJuYW1lIjoiOTc2MzExMTMyMSIsImV4cCI6MTU3MTQwNjc5OSwiaWF0IjoxNTcxNDAzMTk5LCJlbWFpbCI6InN1aml0Lmt1QHNwbHVzcGwuY29tIn0.IMdAdSky3hK_mfrrpoTuP_Y6zeEhvmtI0o18ayW4VkJPKfVYsZIn4etSgNalEZdk3V6vsDy688goSLg_CtS4QSBe3MZVdaBinjhEZDDweGyaXzuo5FozbXiXpHpPLAQBaueNEQhpqU263HUNCAblFOiiSfIrRL-X5KAqvOKIe5jXjCopqkqO8GHS8jf2AZEgNvBDNiWdhQ-EsWufn930H4Ck8V_k5ti6Iy2ngATw_Jx8Ymo0LplJSk5CU5pzE6U6H6dQnaHwSxBuldaby7CtBQZg1hEmSQPkSyxW8GLrmzM8COnVg8wOHQrndi6PikAlxhpF2nqSEgT93KdUmk01YQ",
-    //  refreshToken: "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.FsPs69PTmBZvc-M9lRddJYA_CPaejFrwzR4h4NjnimpOxeyk67PA6x6D1pKNuuBI6DLhZpHtVQmfsR9hi76fJsMe55HGJvcq9UvuK1WiGWhIMK_RNupc7K8nAqZks7acjhrH7gOTLcooNLEgZ16m8ZOnM48dhj6H5sFDh5HZBcJx801KZFVk8ngaSNooM7k41rkC9WIc1aLpZhqHa5IVnCj9ZG9iTWC_Kmq_yiG5XsUaMR4lmYxFujXZxyt87TDABq3HuiuHXLeXP7ChxyvPqYVmHWXdWdkzsCSoLMfeDmsjVvvLsSUQTL6LUHvzPBHlJGgFMA3tWcx9CG1wLhcwqg.00nFl1mMBCc1BkkX._B_kTH7ETbKqsGcO0R_ScdKCVHtiN2X0lB7JrNgFA6FifJzmQ4kMkjnwhvrtjp8tVeK5_wYeFib3vL--kpOxWPocngiT_Ng9htP4c8gsl-EeUubbGGQ32S9cFpL_N57wA3UqTd1u9EgtSUizYwlmhnNLqCI0meMMWZesKg1eNLhacbSSfJRb8a4AZLM68nwTXvNC3jFpzzt4IBzhcb1u8IyZP0Me9DcxfYDS5PHYtrZ1kcYUQl-UdIGuo7R5OE-diKNgzPrFHfW7O0uJHH_BISysDLiL7TVgPmVWI-JvVqqzFa4ZWBYpHwllsZlu5FVYkiLtO-mHugnJTm6GSPmCR0cKsHvuUo13dklPII2PxFPQcRtJ0UhjWcIXVZ_qE__gXDL9MTWV9s9Xn4XnZ7UYPUqA_lOcwpUaOGya2exvPjj7ES_H_BjKM0zVnnlxcNtNDamxftVQNguUVJAcIF3sv9BEKiBhbBY3GUk85fMrU_ajoP030mP7bnw-RX8FOXKv3MAAC6FtL5z2Ar19HDpnSk0NwwCfynxNeSgxy-W452gt72vqoTt6EwR-E-xxRHEigiaafsT_JGD5KcSizsKj2BKu3oqz-lyFbgVRskiUlAFUxGfVE2OsKEynyxhfb7yCjL-8s8XaYNChyCNG7qsBUM3vmqdFTpiX8VJht67CTo0i5oSmkFKiQKLgMCtwLfTb97WvbLmck1LSyLeTdJn8nPOsR041MuoNRkwpV4zI6pKBvJOfOnygZByY26boouzKQXZnRDrSKPPtd_d-1MxTVaYlp254__KGy9aS2jGqGFjYsdJP6kz4m7QHWQYuqW29QqUXTuMmNphhTC_Oenux7L4mQDQK302jRYBiHi2YMIqZCAaYQyszgqWqXCP5gZPtIkSVBhE5WvhMDm6jkD3TFa12xVNPdgRZkLPgkQrEVjkladO-gmuOEEkPB-JATguqsSsqbUuDtWk9P-VnstkQ1Cf9YCpYU7mP15dTxtJQo-40eWFFuLxX33PlUpmR-exlR2gMsE_D8wP_a5hqyRTYpR8tGS911nKKUKp6GzEYGFqIvmMZiR6SDHOmG3lx78t6gBmiYujONxQuL5s4ZhX_zNsRF_ljm4sFlM3WiuJrKAt01GapBfrMlefwxx5tz7dJtHoMlWdvZ-7NvHLFYzdDm24_9NmnEyAiFxbaXBirF6SNcV4_r-tVX9UO2JyLhpppubhOyO9I6bruI03lwDOe97c0r2g7KS0ketgAvIWmDlHCGxCTZqdMt5YvkEUmXinlhKyB6FQPTBXx1-cS6LA.DindiGz_L3qODik82ZbhWQ",
-    //  userMobileNumber: "9763111321"
-    //});
-    //this.commonService.sendMessage('1');
-    //this.router.navigate(['/dashboard']);
+    //if (this.frmUserOTP.valid) {
+    //  if (this.isValidateOTP == false) {
+    //    let params = { ['UserMobileNumber']: this.frmUserOTP.value.UserMobileNumber };
+    //    this.commonService.setHttp('get', 'User/UserOTP', false, params);
+    //    this.commonService.getHttp().then((responseData) => {
+    //      if (responseData.statusCode === "200") {
+    //        this.isValidateOTP = true;
+    //        this.btnSubmitText = 'Verify';
+    //      }
+    //      else {
+    //        console.log('Data not found');
+    //        debugger
+    //      }
+    //    });
+    //  }
+    //  else {
+    //    let params = { ['UserMobileNumber']: this.frmUserOTP.value.UserMobileNumber, ['OTP']: this.frmUserOTP.value.OTP };
+    //    this.commonService.setHttp('get', 'User/ValidateOTP', false, params);
+    //    this.commonService.getHttp().then((responseData) => {
+    //      if (responseData.statusCode === "200") {
+    //        this.commonService.setUserObj(responseData.responseData);
+    //        this.commonService.sendMessage('1');
+    //        this.router.navigate(['/dashboard']);
+    //      }
+    //      else {
+    //        console.log('Data not found');
+    //        debugger;
+    //      }
+    //    });
+    //  }
+    //}
+    this.commonService.setUserObj({
+      applicationID: "qNomLmSdIwViH5D"
+      , idToken: "eyJraWQiOiJzRFZCMW1yYjdISWEwWUtnOCtpaVU1TmRud1pPaStjcXZGMzk5dktkem93PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzYjA4ZGNkMi05MDkyLTQ4MWQtOGI2Mi1hM2QwMDJkODk0OGQiLCJhdWQiOiI0Z3NrNmNuZWxoZXBrZXB0bWZuaTNvaGFuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJhZmVjYTU0Yy03ODdhLTRjOGEtYTg4OS0yYWFlOTRjMTYxNDMiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTU3MTQ4MTMxNSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV9vdkN3Qm02SzEiLCJjb2duaXRvOnVzZXJuYW1lIjoiOTc2MzExMTMyMSIsImV4cCI6MTU3MTQ4NDkxNSwiaWF0IjoxNTcxNDgxMzE1LCJlbWFpbCI6InN1aml0Lmt1QHNwbHVzcGwuY29tIn0.BY4BpyQI0sS64UCSmP-AmrWhqll6YK9DZcr_DXuoaYtz0ICa_ZkrhaX2vsHVvd2R6gymWxTelWnIU1g0KGEYPMyMT8v8EM0h_jS2uBGvCqHucA6MxqbMZfbJrv9HS33EQwJcBtt0TCfbNMGL37r7vxAHoJjn7DpxcIM_SGpKzz_vkYLwxB_YgwLfbrNvMiR8dSIcusZ8OxolTZPUgXhzL26cnziORXgF7n-ytYTxS1yhEua94QEsUTHrjqQpgo1ODLdMR48BC6vRzQ0jnqC8Iww_DP7_-_9_NfTzRU-p75y1Po90ApVGEdG7p8B0zZENkeQZMlUgcHMBrVe8IdcyMg"
+      , refreshToken: "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.J7AoorBP_5LgS5s1xCOxb-YOUCWdUTljLUSB2uQOPSLKP_n8Bi-zmJPnJ7MgKAvVlsaGnjrhdFFGCSc8vO4kR6wCoZMfMBXqJThr8ZD1g2qkLLYpFT9QSpwN8S2rv13FSJ_Bbc-N6ZF-9v27g9sugbz3Xls9dvnSYgElHPtpJGu3ns6kPBlvG3EYpLF04CxYxoqj2kxQYkpruJNqNkFEyr45J2-6YxTz7O4tDrXVtJpH3SYM8PnnCsJaMBfANaZYSj1r0nAa3Y1xp0zONsYiClVHy1Hf7GryO51klLD5VRvnuGcSyVHKHc7_nW9a166gOHKnIU1ZZN7kTTHX0d1I9Q.MZeQvkv3PN9kHIf3.obO42gd1OiTiUdcI0r-3p1egV2Ss3C1I3huJcegz-RA_FaQyfLLn2rTTe_-BKM_XvXolJy9kMONXeOjmBr_zvJxCjucwploXeOkqRX9QVR1_E9DNqw489T4tQ__yzUunxQcqqyuWL5Ec9x-sCX0SBm1uit68y68TOWbyt1SkVu5XY9PibPp-zK__Big26KjpqhdT8vMD6BAudTolxH3qablV8H8YiGX14cjNcIPYK1myveB0O-I4E6-gnaNNQTP4Wvc030skpnMdfIYWE56pw6NqflhdfcDYXQDfpEhbeicIlbcChkJD666IMm_t70-quNhwZjaB73nyi4LeNW5AX9HShCZNrPIYS9QwN0xyv7EJ0mqPvjfHJtoyGwMiK4nVDrBLA3q-OrB97YsNWPGLqP39E6TDbyYOIjXPGPSq_nXtkQ_RgP-3yYQHMe_IMRBex0UEoMXeCtpz97ex21NN3dzCEw8AIrCa7YQGRxwPaA06f65_mZmdt4F2tyhlkR7C9cC2sIT25bL2vhUvojvnIDasKIWrWBpJYKknxjiZR8ZKHLwxQ_1PPkrYCZFnS4DbbrsT_X_WX42zcYzs_64omXC_pyLNyJOKnqFeSq6flfEsq5_Kc_AfqHsS1KDXPiE6XaV9D3nSpZyoZC63kaiei3d9W1m_qRC6GNKQVRv6_orYN3CqEPRhSuXZRGV60gSrUa0CiOTUEJ9Zh1HNV1ZXjv1KRv-xfdgXAtJoBEXfuImXOxmEMH5t263Syiyy0lkVdIzwI2waJnW1wppQ2xBI9aGG4MfgrizulyKuDw3e63ZoTyxKev1vIAAJaQuIy7O62-3yBbpOSoYPOybZ6mQO7ioZwGuAq1S_2tllf8LvVrmwcBNsuMk85Sf20aJj64RFQsahqVZAbaTA4_eVL4aV9eFk-QwCBZ1_5lP9jU_wTMWaaD9ckOwyzaYAE4HXoA9PohQMPHrRgOpW7FXbGTHCRvyYQOlvRJIyw_3xq0YslLfB_3M6HpwNAcQAg5Ihi_0LfzqNRUgdBm87qK8uJkfGwtE2bXKkie7r9VvrwIxIAmUBi_DhPhtzDjJYt3DxpcK2YhtBPI_9r_FIMqBe6dq-bhHTunF04I32e5ImPsr0y5GDW5GFxnKHsIJ0w89HZ36BEneFp4HdMHYYWM_guinMODlH3L_UthI4crFQVWV9xvFKSnRpT7JE1MuAEod_vC5KdFVIiy-36tGRpnybB82udi2RqRuzAj8JV655Cid9ZemNibIBJHaUAxG3aGMb7-DuA_9x6veeGOw3APAca1M.OFvY5Hc5ZaCH75XAu_YBeA"
+      , userMobileNumber: "9763111321"
+    });
+    this.commonService.sendMessage('1');
+    this.router.navigate(['/dashboard']);
   }
+
 
   onGoToRegister() {
     document.getElementById("loginPopup_id").classList.remove('show');
