@@ -3,10 +3,11 @@
 .chat ul{margin:0; padding:0;}
 .chat ul li{margin:0; padding:0; list-style:none;}
 .customerImg{width:50px; border-radius:50%;}
-.chat .chat-header{padding:10px; height:73px; border-bottom:2px solid #fff; background:#132830; border-radius:10px 10px 0 0;}
+.chat .chat-header{padding:10px; height:73px; position:relative; border-bottom:2px solid #fff; background:#132830; border-radius:10px 10px 0 0;}
 .chat .chat-header img {float:left;}
 .chat .chat-header .chat-about{float:left; padding-left:10px; margin-top:6px;}
 .chat .chat-header .chat-with{font-weight:600; font-size:0.8rem; color:#fff;}
+.closeIconChat{position:absolute; cursor:pointer; right:11px; font-size:1rem; color:#fff; top:5px;}
 .chat .chat-header .chat-num-messages{color:#92959E;}
 .chat .chat-header .fa-star{float:right; color:#D8DADF; font-size:20px; margin-top:12px;}
 .chat .chat-history{padding:10px; border-bottom:2px solid #fff; overflow-y:scroll; height:300px;}

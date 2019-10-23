@@ -11,16 +11,12 @@
             </div>
           </div>
           <div class="pb-3 pr-5 pl-5">
-            <div class="mb-3">
-              <div class="d-flex justify-content-center align-items-center flex-column">
-                <div class="position-relative">
-                  <img [attr.src]="userDetails.userPhotoLink ? userDetails.userPhotoLink : '../../assets/img/default_user_icon.png'" alt="{{userDetails.userFullName}}" class="profileImgSty" />
-                  <div class="editProfImgIcon"><i class="fas fa-pencil-alt"></i></div>
-                </div>
-                <div class="usernameTextSty pt-1 pb-1">{{userDetails.userFullName}}</div>
-              </div>
-            </div>
+            <form>
             <div class="form-row">
+              <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                <label>Full Name</label>
+                <span class="form-control">{{userDetails.userFullName}}</span>
+              </div>
               <div class="form-group col-sm-12 col-md-4 col-lg-4">
                 <label>Mobile Number</label>
                 <span class="form-control">{{userDetails.userMobileNumber}}</span>
@@ -29,15 +25,11 @@
                 <label>Alternate Mobile Number</label>
                 <span class="form-control">{{userDetails.userAlternateMobileNumber}}</span>
               </div>
-              <div class="form-group col-sm-12 col-md-4 col-lg-4">
-                <label>Email Id</label>
-                <span class="form-control">{{userDetails.userEmailD}}</span>
-              </div>
             </div>
             <div class="form-row">
               <div class="form-group col-sm-12 col-md-4 col-lg-4">
-                <label>Address</label>
-                <span class="form-control">{{userDetails.userAddress}}</span>
+                <label>Email Id</label>
+                <span class="form-control">{{userDetails.userEmailD}}</span>
               </div>
               <div class="form-group col-sm-12 col-md-4 col-lg-4">
                 <label for="state_id">State</label>
@@ -48,6 +40,13 @@
                 <span class="form-control">{{userDetails.cityName}}</span>
               </div>
             </div>
+            <div class="form-row">
+              <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                <label>Address</label>
+                <span class="form-control">{{userDetails.userAddress}}</span>
+              </div>
+            </div>
+</form>
           </div>
         </div>
       </div>
@@ -57,8 +56,7 @@
 
 <!-- Modal -->
 <form [formGroup]="frmUpdateUser" (ngSubmit)="onSubmit()">
-  <div class="modal fade" data-backdrop="static" id="editProfile_id" tabindex="-1" role="dialog" aria-labelledby="editProfile_idTitle"
-       aria-hidden="true">
+  <div class="modal fade" data-backdrop="static" id="editProfile_id" tabindex="-1" role="dialog" aria-labelledby="editProfile_idTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -70,6 +68,17 @@
         <div class="modal-body">
           <div>
             <div>
+
+            <div class="mb-3">
+              <div class="d-flex justify-content-center align-items-center flex-column">
+                <div class="position-relative">
+                  <img [attr.src]="userDetails.userPhotoLink ? userDetails.userPhotoLink : 'assets/img/default_user_icon.png'" alt="{{userDetails.userFullName}}" class="profileImgSty" />
+                  <div class="editProfImgIcon"><i class="fas fa-pencil-alt"></i></div>
+                </div>
+                <div class="usernameTextSty pt-1 pb-1">{{userDetails.userFullName}}</div>
+              </div>
+            </div>
+
               <div class="form-row">
                 <div class="col-sm-12 col-md-6 col-lg-6">
                   <div class="form-group">

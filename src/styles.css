@@ -456,7 +456,7 @@ label {font-weight:600;}
 .countStyAV{display:inline-block; vertical-align:middle; margin-right:10px;}
 .countStyAV p{margin:0; display:flex; justify-content:center; border-radius:50%; font-weight:500; background:#fec99a; font-size:1rem; align-items:center; width:28px; height:28px;}
 
-.profileImgSty{width:150px; height:150px; border-radius:50%; object-fit:cover; object-position:center right;}
+.profileImgSty{width:120px; height:120px; border-radius:50%; object-fit:cover; object-position:center right;}
 .usernameTextSty{ font-weight:500; font-size:1rem;}
 .editProfImgIcon{position:absolute; text-align:center; bottom:5px; right:8px;}
 .editProfImgIcon i{cursor:pointer; font-size:1rem; width:30px; height:30px; background:#cfe6f1; padding:6px 0 0; border-radius:50%; color:#007bff; display:block; border:1px solid #82a7d0;}
