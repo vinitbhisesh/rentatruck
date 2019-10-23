@@ -523,6 +523,16 @@ body{padding-top:52px;}
 
 .minheight41Sty{min-height:41px;}
 
+.fileSty{border:2px dashed #ddd; padding:10px; width:170px; height:100px; margin:0 auto;}
+.fileStyInp{display:none;}
+.fileSty .fileUploadIcon{display: flex; justify-content: center; align-items: center; height: 100%;}
+.fileSty .fileUploadIcon i{color:#bbb9b9; font-size:2rem;}
+
+.imageListCAP{margin:0; padding:0;}
+.imageListCAP li{list-style:none; padding:0; border:1px solid #ddd; margin:5px; border-radius:10px;}
+.imageListCAP li img{width:50px; height:50px; border-radius:10px;}
+
+
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/

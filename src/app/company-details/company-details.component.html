@@ -64,16 +64,23 @@
                                     <ul class="subListAV">
                                         <li>
                                             <div class="d-flex availabelVehicleFSty">
-                                                   <div class="lblSpanSty">
+                                                <div class="lblSpanSty">
                                                     <label>Preferences: </label>
                                                     <span>NA</span>
                                                 </div>
                                             </div>
                                             <div class="d-flex availabelVehicleFSty">
-                                                   <div class="lblSpanSty">
+                                                <div class="lblSpanSty">
                                                     <label>Conpany Address: </label>
                                                     <span>694/1/2/4, Sahakar Bhavan, 2nd Floor, Adarsh Nagar, Hotel Utsav Chowk, Near City-Pride Cinema, Pune-Satara road, Pune-411037,</span>
                                                 </div>
+                                            </div>
+                                            <div>
+                                                <ul class="imageListCAP d-flex justify-content-start">
+                                                    <li><img src="assets/img/avatar.jpg" alt=""></li>
+                                                    <li><img src="assets/img/aadharCard.png" alt=""></li>
+                                                    <li><img src="assets/img/panCard.png" alt=""></li>
+                                                </ul>
                                             </div>
                                             
 <div class="branchesSecMain">
@@ -154,7 +161,7 @@
             <div class="modal-body">
 <div>
             <form>
-                <div class="vertiScrollBar">
+                <div>
 
                     <div class="form-row">
                         <div class="col-sm-12 col-md-8 col-lg-8">
@@ -250,37 +257,39 @@
 
                     <div class="form-row">
                         <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label>Upload Company Photo</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="companyPhotoFile" required>
-                            <label class="custom-file-label" for="companyPhotoFile">Choose file...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
-                        </div>
-                    </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="aadharCardNumber_id">Upload PAN Card</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="panCardFile" required>
-                            <label class="custom-file-label" for="panCardFile">Choose file...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
-                        </div>
-                    </div>
+                            <div class="form-group text-center">
+                                <label>Upload Company Photo</label>
+                                <label class="fileSty" for="companyPhotoFile_id">
+                                    <div class="fileUploadIcon">
+                                        <i class="fas fa-file-upload"></i>
+                                    </div>
+                                    <input type="file" class="fileStyInp" id="companyPhotoFile_id" />
+                                </label>
+                            </div>
                         </div>
                         <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="aadharCardNumber_id">Upload Aadhar card</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="aadharCardFile" required>
-                            <label class="custom-file-label" for="aadharCardFile">Choose file...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            <div class="form-group text-center">
+                                <label>Upload PAN Card</label>
+                                <label class="fileSty" for="uploadPANCardFile_id">
+                                    <div class="fileUploadIcon">
+                                        <i class="fas fa-file-upload"></i>
+                                    </div>
+                                    <input type="file" class="fileStyInp" id="uploadPANCardFile_id" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="form-group text-center">
+                                <label>Upload Aadhar card</label>
+                                <label class="fileSty" for="uploadAadharCardFile_id">
+                                    <div class="fileUploadIcon">
+                                        <i class="fas fa-file-upload"></i>
+                                    </div>
+                                    <input type="file" class="fileStyInp" id="uploadAadharCardFile_id" />
+                                </label>
+                            </div>
                         </div>
                     </div>
-                        </div>
-                    </div>
-
                 </div>
             </form>
         </div>
