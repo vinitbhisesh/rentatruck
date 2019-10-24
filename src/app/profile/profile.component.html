@@ -41,7 +41,7 @@
               </div>
               <div class="form-group col-sm-12 col-md-4 col-lg-4">
                 <label for="state_id">State</label>
-                <span class="form-control">{{userDetails.Name}}</span>
+                <span class="form-control">{{userDetails.stateName}}</span>
               </div>
               <div class="form-group col-sm-12 col-md-4 col-lg-4">
                 <label for="city_id">City</label>
@@ -56,7 +56,7 @@
 </div>
 
 <!-- Modal -->
-<form [formGroup]="frmUpdateUser" (ngSubmit)="onSubmit()">
+<form [formGroup]="frmUpdateUser" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
   <div class="modal fade" id="editProfile_id" tabindex="-1" role="dialog" aria-labelledby="editProfile_idTitle"
        aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -79,7 +79,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6">
                   <div class="form-group">
-                    <label for="userEmailD">Email ID</label>
+                    <label for="email">Email ID</label>
                     <input type="email" class="form-control" formControlName="userEmailD" placeholder="e.g. nitin123@example.com" />
                   </div>
                 </div>
@@ -119,9 +119,9 @@
                 <div class="col-sm-12 col-md-6 col-lg-6">
                   <div class="form-group">
                     <label for="state">State</label>
-                    <select class="form-control" (change)="onChangeState()" formControlName="state">
+                    <select class="form-control" (change)="onChangeState(false)" formControlName="state">
                       <option value="" disabled>Select</option>
-                      <option *ngFor="let state of states" [ngValue]="state">{{state.lookupValue}}</option>
+                      <option *ngFor="let state of states" [ngValue]="state.lookupID">{{state.lookupValue}}</option>
                     </select>
                   </div>
                 </div>
@@ -130,7 +130,7 @@
                     <label for="city">City</label>
                     <select class="form-control" formControlName="city">
                       <option value="" disabled>Select</option>
-                      <option *ngFor="let city of cities" [ngValue]="city">{{city.lookupValue}}</option>
+                      <option *ngFor="let city of cities" [ngValue]="city.lookupID">{{city.lookupValue}}</option>
                     </select>
                   </div>
                 </div>
@@ -139,6 +139,7 @@
           </div>
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="onChangeStateUpdateValue()">Updates</button>
           <button type="submit" class="btn btn-primary">Update</button>
         </div>
       </div>

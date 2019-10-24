@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { debug } from 'util';
 
@@ -11,6 +11,7 @@ export class CommonService {
   private subject = new Subject<any>();
   private userObj: any;
   private userAfterLoggedObj: Object;
+  private isLoggedIn: boolean = false;
   private httpObj: any = {
     type: '',
     url: '',
@@ -86,6 +87,7 @@ export class CommonService {
     if (isHeader) {
       this.httpObj.options.headers = new HttpHeaders({
         'Content-Type': 'application/json; charset=utf-8',
+        //'enctype': 'multipart/form-data',
         'Authorization': "bearer " + this.userObj.idToken,
         'Accept': "application/json"
       });

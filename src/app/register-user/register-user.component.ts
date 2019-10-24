@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
-import { debug } from 'util';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-user',
@@ -11,12 +9,14 @@ import { debug } from 'util';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-  constructor(private commonService: CommonService, private http: HttpClient, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) { }
-
+  constructor(private commonService: CommonService, private router: Router) { }
+  isValidateOTPregister: boolean = false;
   frmRegisterUser: FormGroup;
   isValidateOTP: boolean = false;
   btnSubmitText: string = 'Generate OTP';
 
+  onResendOTPRegister() {
+  }
   ngOnInit() {
     this.frmRegisterUser = new FormGroup({
       UserType: new FormControl('', Validators.required),

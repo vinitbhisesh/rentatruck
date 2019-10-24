@@ -6,15 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-details.component.css']
 })
 export class CompanyDetailsComponent implements OnInit {
-
+  status: boolean = false;
   constructor() { }
 
   ngOnInit() {
+
+  }
+  onCompanyReg() {
+    document.getElementById("addCompany_id").classList.add('show');
+    document.getElementById("addCompany_id").style.display = 'block';
   }
 
-status: boolean = false;
-clickEvent(){
-this.status = !this.status;       
-}
-
+  onBranchReg() {
+    document.getElementById("addBranch_id").classList.add('show');
+    document.getElementById("addBranch_id").style.display = 'block';
+  }
 }
