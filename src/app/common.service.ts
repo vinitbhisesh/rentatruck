@@ -67,7 +67,6 @@ export class CommonService {
       temp.toPromise().then(res => {
         let resData: any = res;
         if (resData.statusCode !== "200") {
-          debugger
           //this.router.navigate(['/home']);
         }
         else {
