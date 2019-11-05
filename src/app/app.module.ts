@@ -32,6 +32,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 //import { HttpServiceService } from './http-service.service';
 import { VehicleGroupComponent } from './vehicle-group/vehicle-group.component';
 import { ComplaintChatComponent } from './complaint-chat/complaint-chat.component';
+import { AllStatusComponent } from './all-status/all-status.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { ComplaintChatComponent } from './complaint-chat/complaint-chat.componen
     RegisterUserComponent,
     VehicleGroupComponent,
     ComplaintChatComponent,
+    AllStatusComponent,
     
   ],
   imports: [

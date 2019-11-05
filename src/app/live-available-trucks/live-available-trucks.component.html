@@ -57,6 +57,293 @@
             </div>
 
             <div class="detailsScrollBarV">
+                <div class="cardSty availabelVehicleCardSty" [ngClass]="status ? 'open' : 'closeB'">
+
+                    <div class="mainList">
+                        <div class="d-flex d-flex justify-content-between align-items-center parentAL">
+                            <div>
+                                <div class="d-flex availabelVehicleFSty">
+                                    <div class="lblSpanSty">
+                                        <span class="pl-0">Pune to Kolhapur</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Vehicle Number: </label>
+                                        <span>MH12 AB 1111</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Date: </label>
+                                        <span>18/09/2019</span>
+                                    </div>
+                                    <div class="lblSpanSty">
+                                        <label>Time: </label>
+                                        <span>11:40 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="btnIconStyDetails">
+                                    <div>
+                                        <div class="countStyAV"><p>2</p></div>
+                                        <button (click)="clickEvent()" class="btn btn-sm btn-outline-primary buttonArrowAV"><i class="fas fa-angle-down"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+<div class="subListAV">
+
+                                <div class="d-flex d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="btnIconStyDetails">
+                                            <div>
+                                                <button type="button" class="btn btn-sm btn-outline-primary mr-2"><i class="fas fa-phone-alt"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary mr-2"><i class="fab fa-whatsapp"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary mr-2"><i class="far fa-envelope"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#requestForBooking">Request for Booking</button>
+                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#requestForQuotation">Send for Quotation</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+<ul class="subListAV">
+                            <li>
+                                <div class="d-flex d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="d-flex availabelVehicleFSty">
+                                            <div class="lblSpanSty">
+                                                <span class="pl-0">Pune to Kolhapur</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Vehicle Number: </label>
+                                                <span>MH12 AB 1111</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Date: </label>
+                                                <span>18/09/2019</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Time: </label>
+                                                <span>11:40 AM</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="d-flex availabelVehicleFSty">
+                                            <div class="lblSpanSty">
+                                                <span class="pl-0">Pune to Kolhapur</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Vehicle Number: </label>
+                                                <span>MH12 AB 1111</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Date: </label>
+                                                <span>18/09/2019</span>
+                                            </div>
+                                            <div class="lblSpanSty">
+                                                <label>Time: </label>
+                                                <span>11:40 AM</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+</div>
+
+
+
+
+                    </div>
+
+                </div>
+
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- Request For Booking Modal Start -->
+<div class="modal fade" data-backdrop="static" id="requestForBooking" tabindex="-1" role="dialog" aria-labelledby="requestForBookingLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="requestForBookingLabel">Request for Booking</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty">
+                        <div class="lblSpanSty">
+                            <span class="ml-0 textBlueColr">Pune to Kolhapur</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Date: </label>
+                            <span>18/09/2019</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Time: </label>
+                            <span>11:40 AM</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty mt-3">
+                        <div class="lblSpanSty">
+                            <label>Type: </label>
+                            <span>Tata SFC 709 EX</span>
+                        </div>
+                    </div>
+                    <div class="textStyRB">Has Requested for booking</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">No</button>
+                <button type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Request For Booking Modal End -->
+
+
+<!-- Request For Quotation Modal Start -->
+<div class="modal fade" data-backdrop="static" id="requestForQuotation" tabindex="-1" role="dialog" aria-labelledby="requestForQuotationLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="requestForQuotationLabel">Send for Quotation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty">
+                        <div class="lblSpanSty">
+                            <span class="ml-0 textBlueColr">Pune to Kolhapur</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Date: </label>
+                            <span>18/09/2019</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Time: </label>
+                            <span>11:40 AM</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty mt-3">
+                        <div class="lblSpanSty">
+                            <label>Type: </label>
+                            <span>Tata SFC 709 EX</span>
+                        </div>
+                    </div>
+                    <div class="textStyRB">Has Send for Quotation</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">No</button>
+                <button type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Request For Quotation Modal End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="dashbContentFlexH position-relative d-none">
+
+    <div class="bodyBgGradColor"></div>
+
+    <div class="container-fluid">
+
+        <div class="contentAreaBox">
+
+<div class="form-row align-items-center mb-2 minheight41Sty">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <h1 class="pageTitleSty">Live Available Trucks</h1>
+                </div>
+                <div class="col-sm-12 col-md-5 col-lg-5">
+                    <div class="searchBoxSty">
+                        <input type="text" placeholder="Search..">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <form>
+                        <div class="form-group mb-0">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option selected>Select state</option>
+                                <option>Andhra Pradesh (999)</option>
+                                <option>Arunachal Pradesh (999)</option>
+                                <option>Assam (999)</option>
+                                <option>Bihar (999)</option>
+                                <option>Chhattisgarh (999)</option>
+                                <option>Goa (999)</option>
+                                <option>Gujarat (999)</option>
+                                <option>Haryana (999)</option>
+                                <option>Himachal Pradesh (999)</option>
+                                <option>Jammu and Kashmir (999)</option>
+                                <option>Jharkhand (999)</option>
+                                <option>Karnataka (999)</option>
+                                <option>Kerala (999)</option>
+                                <option>Madhya Pradesh (999)</option>
+                                <option>Maharashtra (999)</option>
+                                <option>Manipur (999)</option>
+                                <option>Meghalaya (999)</option>
+                                <option>Mizoram (999)</option>
+                                <option>Nagaland (999)</option>
+                                <option>Odisha (999)</option>
+                                <option>Punjab (999)</option>
+                                <option>Rajasthan (999)</option>
+                                <option>Sikkim (999)</option>
+                                <option>Tamil Nadu (999)</option>
+                                <option>Telangana (999)</option>
+                                <option>Tripura (999)</option>
+                                <option>Uttar Pradesh (999)</option>
+                                <option>Uttarakhand (999)</option>
+                                <option>West Bengal (999)</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="detailsScrollBarV">
 
 <div class="tbaleListLivetTL">
 <div class="tblLA">

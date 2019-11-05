@@ -12,4 +12,9 @@ export class LiveAvailableTrucksComponent implements OnInit {
   ngOnInit() {
   }
 
+  status: boolean = false;
+  clickEvent(){
+    this.status = !this.status;       
+  }
+
 }

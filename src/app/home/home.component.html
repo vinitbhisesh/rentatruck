@@ -22,7 +22,50 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="form-row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label>Load Status</label>
+                                        <div class="d-flex justify-content-start">
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-4">
+                                                <input type="radio" class="custom-control-input" checked name="lsFullPartial" id="lsFull_id">
+                                                <label class="custom-control-label" for="lsFull_id">Full</label>
+                                            </div>
+                                            <div class="form-group custom-control custom-radio my-1 mr-sm-2">
+                                                <input type="radio" class="custom-control-input" name="lsFullPartial" id="lsPartial_id">
+                                                <label class="custom-control-label" for="lsPartial_id">Partial</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="load_id">Full Load (MT)</label>
+                                        <select id="load_id" class="form-control">
+                                            <option selected>Select</option>
+                                            <option>Above 30 MT</option>
+                                            <option>Above 50 MT</option>
+                                            <option>Do Not Know</option>
+                                            <option>Upto 30 MT</option>
+                                            <option>Upto 25 MT</option>
+                                            <option>Upto 20 MT</option>
+                                            <option>Upto 15 MT</option>
+                                            <option>Upto 10 MT</option>
+                                            <option>Upto 5 MT</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group d-none">
+                                        <label for="load_id">Partial Load (KG)</label>
+                                        <select id="load_id" class="form-control">
+                                            <option selected>Select</option>
+                                            <option>10 KG to 100 KG</option>
+                                            <option>1001 KG to 3000 KG</option>
+                                            <option>101 KG to 500 KG</option>
+                                            <option>501 KG to 1000 KG</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="form-group">
@@ -41,30 +84,7 @@
 
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label>Load Status</label>
-                                        <div class="d-flex justify-content-start">
-                                            <div class="form-group custom-control custom-radio my-1 mr-sm-4">
-                                                <input type="radio" class="custom-control-input" name="lsFullPartial" id="lsFull_id">
-                                                <label class="custom-control-label" for="lsFull_id">Full</label>
-                                            </div>
-                                            <div class="form-group custom-control custom-radio my-1 mr-sm-2">
-                                                <input type="radio" class="custom-control-input" name="lsFullPartial" id="lsPartial_id">
-                                                <label class="custom-control-label" for="lsPartial_id">Partial</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="load_id">Load</label>
-                                        <input type="text" class="form-control" id="load_id" placeholder="load" />
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-primary btn-block btn-grad getEstimateBtn mb-3">get estimate</button>
+                            <button type="button" class="btn btn-primary btn-block btn-grad getEstimateBtn mb-3">Post Load</button>
                         </form>
                     </div>
                 </div>
@@ -139,6 +159,7 @@
                             <td><i class="far fa-clock"></i> 00:16h</td>
                             <td><i class="far fa-calendar-alt"></i> 9 Apr</td>
                             <td><i class="fas fa-map-marker-alt"></i> Rajkot, GJ <i class="fas fa-long-arrow-alt-right"></i> Meerut, UP</td>
+                            <td>117 km</td>
                             <td><i class="fas fa-truck"></i> Truck Close (20 ft)</td>
                             <td><i class="fas fa-dolly"></i> (Load - Full)</td>
                             <td><a href="#"><i class="fas fa-eye"></i> View</a></td>
@@ -147,6 +168,7 @@
                             <td><i class="far fa-clock"></i> 00:16h</td>
                             <td><i class="far fa-calendar-alt"></i> 9 Apr</td>
                             <td><i class="fas fa-map-marker-alt"></i> Rajkot, GJ <i class="fas fa-long-arrow-alt-right"></i> Meerut, UP</td>
+                            <td>117 km</td>
                             <td><i class="fas fa-truck"></i> Truck Close (20 ft)</td>
                             <td><i class="fas fa-dolly"></i> (Load - Full)</td>
                             <td><a href="#"><i class="fas fa-eye"></i> View</a></td>
@@ -155,6 +177,7 @@
                             <td><i class="far fa-clock"></i> 00:16h</td>
                             <td><i class="far fa-calendar-alt"></i> 9 Apr</td>
                             <td><i class="fas fa-map-marker-alt"></i> Rajkot, GJ <i class="fas fa-long-arrow-alt-right"></i> Meerut, UP</td>
+                            <td>117 km</td>
                             <td><i class="fas fa-truck"></i> Truck Close (20 ft)</td>
                             <td><i class="fas fa-dolly"></i> (Load - Full)</td>
                             <td><a href="#"><i class="fas fa-eye"></i> View</a></td>
@@ -194,24 +217,30 @@
                             <td><i class="far fa-clock"></i> 00:16h</td>
                             <td><i class="far fa-calendar-alt"></i> 9 Apr</td>
                             <td><i class="fas fa-map-marker-alt"></i> Rajkot, GJ <i class="fas fa-long-arrow-alt-right"></i> Meerut, UP</td>
+                            <td>117 km</td>
                             <td><i class="fas fa-truck"></i> Truck Close (20 ft)</td>
                             <td><i class="fas fa-dolly"></i> (Load - Full)</td>
+                            <td>MH-26-BE-0739</td>
                             <td><a href="#"><i class="fas fa-eye"></i> View</a></td>
                         </tr>
                         <tr>
                             <td><i class="far fa-clock"></i> 00:16h</td>
                             <td><i class="far fa-calendar-alt"></i> 9 Apr</td>
                             <td><i class="fas fa-map-marker-alt"></i> Rajkot, GJ <i class="fas fa-long-arrow-alt-right"></i> Meerut, UP</td>
+                            <td>117 km</td>
                             <td><i class="fas fa-truck"></i> Truck Close (20 ft)</td>
                             <td><i class="fas fa-dolly"></i> (Load - Full)</td>
+                            <td>MH-26-BE-0739</td>
                             <td><a href="#"><i class="fas fa-eye"></i> View</a></td>
                         </tr>
                         <tr>
                             <td><i class="far fa-clock"></i> 00:16h</td>
                             <td><i class="far fa-calendar-alt"></i> 9 Apr</td>
                             <td><i class="fas fa-map-marker-alt"></i> Rajkot, GJ <i class="fas fa-long-arrow-alt-right"></i> Meerut, UP</td>
+                            <td>117 km</td>
                             <td><i class="fas fa-truck"></i> Truck Close (20 ft)</td>
                             <td><i class="fas fa-dolly"></i> (Load - Full)</td>
+                            <td>MH-26-BE-0739</td>
                             <td><a href="#"><i class="fas fa-eye"></i> View</a></td>
                         </tr>
                     </table>
@@ -391,7 +420,7 @@
                                             <div>Size(LxBxH): 7ft x 4.5ft x 5.5ft</div>
                                             <div class="btnStyFares">Fares starting from <span>₹ 200</span></div>
                                             <p class="p-textColor">Base fare includes 1 kms distance and 60 minutes of time. <br /> Pricing may vary based on your locality.<br /> Road tax, parking etc as applicable over and above ride fare</p>
-                                            <button type="button" class="btn btn-primary btn-grad">more details <i class="fas fa-angle-double-right"></i></button>
+                                            <button type="button" class="btn btn-dark">More Details <i class="fas fa-angle-double-right"></i></button>
                                         </div>
                                     </div>
                                 </div>

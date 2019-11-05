@@ -12,8 +12,7 @@
             </div>
             <div class="row flex-column flex-md-row">
                 <div class="col">
-                    <div
-                        class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox1">
+                    <div class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox1 cursorPointerSty" routerLink="/allStatus">
                         <div class="iconImgDC mb-3">
                             <img src="assets/img/cargoTruck1.png" alt="">
                         </div>
@@ -24,8 +23,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div
-                        class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox2">
+                    <div class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox2 cursorPointerSty" routerLink="/allStatus">
                         <div class="iconImgDC mb-3">
                             <img src="assets/img/availableVehicleIcon.png" alt="">
                         </div>
@@ -36,8 +34,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div
-                        class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox3">
+                    <div class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox3 cursorPointerSty" routerLink="/allStatus">
                         <div class="iconImgDC mb-3">
                             <img src="assets/img/todaysBookingIcon.png" alt="">
                         </div>
@@ -48,8 +45,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div
-                        class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox4">
+                    <div class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox4" routerLink="/allStatus">
                         <div class="iconImgDC mb-3">
                             <img src="assets/img/sendMaterialicon.png" alt="">
                         </div>
@@ -60,8 +56,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div
-                        class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox5">
+                    <div class="d-flex flex-column justify-content-center align-items-center totalCountBox totalCountBox5 cursorPointerSty" routerLink="/allStatus">
                         <div class="iconImgDC mb-3">
                             <img src="assets/img/registerDriversIcon.png" alt="">
                         </div>
@@ -89,8 +84,7 @@
                             <div
                                 class="d-flex flex-column flex-md-row flex-lg-row justify-content-center justify-content-md-between align-items-center">
                                 <div class="findMoreLoadsBtnSty">
-                                    <button type="button" class="btn btn-primary" routerLink="/liveAvailableLoads"><i
-                                            class="fas fa-dolly"></i> Find More Loads</button>
+                                    <button type="button" class="btn btn-primary" routerLink="/liveAvailableLoads"><i class="fas fa-dolly"></i> Find More Loads</button>
                                 </div>
                                 <!-- <div class="postYourTLBtnSty">
                                     <button type="button" class="btn btn-primary"><i class="fas fa-truck"></i> Post Truck Location</button>
@@ -98,8 +92,7 @@
                             </div>
                         </div>
                         <div class="viewAllBtn">
-                            <button type="button" class="btn btn-outline-primary" routerLink="/liveAvailableLoads">View
-                                All</button>
+                            <button type="button" class="btn btn-outline-primary" routerLink="/liveAvailableLoads">View All</button>
                         </div>
                     </div>
                 </div>
@@ -113,7 +106,7 @@
                             <td>117 km</td>
                             <td><i class="fas fa-truck"></i> Truck Close (20 ft)</td>
                             <td><i class="fas fa-dolly"></i> (Load - Full)</td>
-                            <td><a href="#"><i class="fas fa-eye"></i> View</a></td>
+                            <td><a href="" data-toggle="modal" data-target="#viewLiveAvailableLoads"><i class="fas fa-eye"></i> View</a></td>
                         </tr>
                         <tr>
                             <td><i class="far fa-clock"></i> 00:16h</td>
@@ -201,3 +194,62 @@
 
         </div>
     </div></div>
+
+<!-- Request For Quotation Modal Start -->
+<div class="modal fade" data-backdrop="static" id="viewLiveAvailableLoads" tabindex="-1" role="dialog" aria-labelledby="viewLiveAvailableLoadsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewLiveAvailableLoadsLabel">Live Available Load</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="d-flex justify-content-between availabelVehicleFSty">
+                        <div class="lblSpanSty">
+                            <span class="ml-0 textBlueColr">Pune to Kolhapur</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Date: </label>
+                            <span>18/09/2019</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Time: </label>
+                            <span>11:40 AM</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-between availabelVehicleFSty mt-2 mb-3">
+                        <div class="lblSpanSty mb-2">
+                            <label>Load: </label>
+                            <span>2 Ton</span>
+                        </div>
+                        <div class="lblSpanSty mb-2">
+                            <label>Status: </label>
+                            <span>Full</span>
+                        </div>
+                        <div class="lblSpanSty mb-2">
+                            <label>Type: </label>
+                            <span>Tata SFC 709 EX</span>
+                        </div>
+                        <div class="lblSpanSty mb-2">
+                            <label>Distance: </label>
+                            <span>220 Km</span>
+                        </div>
+                        <div class="lblSpanSty">
+                            <label>Rate: </label>
+                            <span>50</span>
+                        </div>
+                    </div>
+                    <div class="textStyRB">Has Send for Quotation</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Request For Booking</button>
+                <button type="button" class="btn btn-primary">Send for Quotation</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Request For Quotation Modal End -->

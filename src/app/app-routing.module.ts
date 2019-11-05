@@ -19,6 +19,7 @@ import { FaqComponent } from './faq/faq.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { VehicleGroupComponent } from './vehicle-group/vehicle-group.component';
+import { AllStatusComponent } from './all-status/all-status.component';
 
 //const routes: Routes = [];
 
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent },
   { path: 'contactUs', component: ContactUsComponent },
   { path: 'companyDetails', component: CompanyDetailsComponent },
-  { path: 'vehicleGroup', component: VehicleGroupComponent }
+  { path: 'vehicleGroup', component: VehicleGroupComponent },
+  { path: 'allStatus', component: AllStatusComponent }
 ];
 
 
