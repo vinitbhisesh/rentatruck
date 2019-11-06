@@ -32,6 +32,9 @@ export class AppComponent implements OnDestroy {
   }
 
   ngOnInit() {
+    this.commonService.isUserlogedincheck.subscribe(check=>{
+      this.isLoggedIn = check;}
+      )
     AOS.init({
       once: true, // whether animation should happen only once - while scrolling down
     });

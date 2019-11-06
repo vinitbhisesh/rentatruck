@@ -1,3 +1,4 @@
+<div class="dashboardPages">
 <div class="dashbContentFlexH position-relative">
   <div class="bodyBgGradColor"></div>
   <div class="container-fluid">
@@ -10,6 +11,16 @@
               <div class="mt-3 mr-3"><button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editProfile_id">Edit</button></div>
             </div>
           </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+              <div class="position-relative">
+                <img [attr.src]="userDetails.userPhotoLink ? userDetails.userPhotoLink : 'assets/img/default_user_icon.png'" alt="{{userDetails.userFullName}}" class="profileImgSty" />
+              </div>
+              <div class="usernameTextSty pt-1 pb-1">{{userDetails.userFullName}}</div>
+            </div>
+          </div>
+
           <div class="pb-3 pr-5 pl-5">
             <form>
             <div class="form-row">
@@ -52,6 +63,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- Modal -->

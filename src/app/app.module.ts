@@ -2,11 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderBeforeLoginComponent } from './header-before-login/header-before-login.component';
 import { HeaderAfterLoginComponent } from './header-after-login/header-after-login.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { RegisterVehicleComponent } from './register-vehicle/register-vehicle.component';
 import { AvailableVehicleComponent } from './available-vehicle/available-vehicle.component';
 import { BookingComponent } from './booking/booking.component';
@@ -38,11 +36,9 @@ import { AllStatusComponent } from './all-status/all-status.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
     HeaderBeforeLoginComponent,
     HeaderAfterLoginComponent,
-    BreadcrumbComponent,
     RegisterVehicleComponent,
     AvailableVehicleComponent,
     BookingComponent,

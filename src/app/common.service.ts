@@ -7,7 +7,7 @@ import { debug } from 'util';
 @Injectable({ providedIn: 'root' })
 export class CommonService {
   constructor(private http: HttpClient, private router: Router) { }
-
+  isUserlogedincheck=new Subject<boolean>();
   private subject = new Subject<any>();
   private userObj: any;
   private userAfterLoggedObj: Object;

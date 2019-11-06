@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, Event, NavigationStart } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonService } from '../common.service';
@@ -9,7 +9,7 @@ import { CommonService } from '../common.service';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   constructor(private commonService: CommonService, private http: HttpClient, private router: Router) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
@@ -77,5 +77,9 @@ export class HomeComponent {
         }
       }
     });
+  }
+  ngOnInit(){
+    this.commonService.isUserlogedincheck.next(false)
+
   }
 }
