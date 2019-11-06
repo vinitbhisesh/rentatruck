@@ -194,9 +194,9 @@ body .wdthAuto{width:auto;}
 .searchBoxDashbRTA input{border:1px solid #fff; width:100%; display:block; padding:10px 45px 10px 20px; border-radius:30px;}
 .searchBoxDashbRTA i{position:absolute; top:11px; right:20px; font-size:16px; color:#0a80c5;}
 
-.titleStyLAL{color:#19a9df; margin-bottom:10px;}
+.titleStyLAL{color:#4A6CFF; margin-bottom:10px;}
 .titleStyLAL h5{font-size:1rem;}
-.titleStyLAT{color:#cf9100; margin-bottom:10px;}
+.titleStyLAT{color:#F36538; margin-bottom:10px;}
 .titleStyLAT h5{font-size:1rem;}
 
 .tbaleListLivetTL{margin-bottom:30px;}
@@ -210,11 +210,11 @@ body .wdthAuto{width:auto;}
 
 .findMoreLoadsBtnSty{margin-bottom:10px;}
 .findMoreLoadsBtnSty button{width:180px; font-size:0.9rem;}
-.findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#17a9e1; border-radius:30px; border:none;}
+.findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#4A6CFF; border-radius:30px; border:none;}
 .postYourTLBtnSty{margin-bottom:10px;}
 .postYourTLBtnSty{margin-left:0;}
 .postYourTLBtnSty button{width:180px; font-size:0.9rem;}
-.postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#d5a006; border-radius:30px; border:none;}
+.postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#F36538; border-radius:30px; border:none;}
 .viewAllBtn button{font-weight:500; border-radius:30px; font-size:0.9rem;}
 .registerBtn{color:#219fe8; border-color:#219fe8; border-radius:20px;}
 
@@ -265,9 +265,9 @@ body .wdthAuto{width:auto;}
 .searchBoxDashbRTA input{border:1px solid #fff; width:100%; display:block; padding:10px 45px 10px 20px; border-radius:30px;}
 .searchBoxDashbRTA i{position:absolute; top:11px; right:20px; font-size:16px; color:#0a80c5;}
 
-.titleStyLAL{color:#19a9df;}
+.titleStyLAL{color:#4A6CFF;}
 .titleStyLAL h5{font-size:1rem;}
-.titleStyLAT{color:#cf9100;}
+.titleStyLAT{color:#F36538;}
 .titleStyLAT h5{font-size:1rem;}
 
 .tbaleListLivetTL{margin-bottom:30px;}
@@ -279,9 +279,9 @@ body .wdthAuto{width:auto;}
 .tbaleListLivetTL table a{text-decoration:none;}
 
 .findMoreLoadsBtnSty button{width:160px; font-size:0.9rem;}
-.findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#17a9e1; border-radius:30px; border:none;}
+.findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#4A6CFF; border-radius:30px; border:none;}
 .postYourTLBtnSty button{width:180px; font-size:0.9rem;}
-.postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#d5a006; border-radius:30px; border:none;}
+.postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#F36538; border-radius:30px; border:none;}
 .viewAllBtn button{font-weight:500; border-radius:30px; font-size:0.9rem;}
 
 }
@@ -402,21 +402,21 @@ label{font-weight:600;}
 .searchBoxDashbRTA input{border:1px solid #fff; width:100%; display:block; padding:10px 45px 10px 20px; border-radius:30px;}
 .searchBoxDashbRTA i{position:absolute; top:11px; right:20px; font-size:16px; color:#0a80c5;}
 
-.titleStyLAL{color:#19a9df;}
-.titleStyLAT{color:#cf9100;}
+.titleStyLAL{color:#4A6CFF;}
+.titleStyLAT{color:#F36538;}
 
 .tbaleListLivetTL{margin-bottom:30px;}
 .tbaleListLivetTL table{width:100%; text-align:center;}
 .tbaleListLivetTL table tr:nth-child(even) {background:#fff;}
-.tbaleListLivetTL table tr:nth-child(odd) {background: rgb(255,255,255); background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #c9e6ef 50%, rgba(255,255,255,1) 100%);}
+.tbaleListLivetTL table tr:nth-child(odd) {background: rgb(255,255,255); background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #c7d1f9 50%, rgba(255,255,255,1) 100%);}
 .tbaleListLivetTL table tr td{border-bottom:1px solid #fafafa; color:#000; font-weight:400; padding:10px; font-size:0.9rem;}
 .tbaleListLivetTL i{display:inline-block; margin-right:3px; font-size:0.8rem;}
 .tbaleListLivetTL table a{text-decoration:none;}
 
 .findMoreLoadsBtnSty button{width:200px;}
-.findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#17a9e1; border-radius:30px; border:none;}
+.findMoreLoadsBtnSty button, .findMoreLoadsBtnSty button:focus, .findMoreLoadsBtnSty button:hover{background-color:#4A6CFF; border-radius:30px; border:none;}
 .postYourTLBtnSty button{width:200px;}
-.postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#d5a006; border-radius:30px; border:none;}
+.postYourTLBtnSty button, .postYourTLBtnSty button:focus, .postYourTLBtnSty button:hover{background-color:#F36538; border-radius:30px; border:none;}
 .viewAllBtn button{font-weight:500; border-radius:30px;}
 
 .container-fluid{width:100%; padding-right:50px; padding-left:50px; margin-right:auto; margin-left:auto;}
