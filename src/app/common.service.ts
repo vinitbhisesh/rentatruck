@@ -7,9 +7,10 @@ import { debug } from 'util';
 @Injectable({ providedIn: 'root' })
 export class CommonService {
   constructor(private http: HttpClient, private router: Router) { }
-  isUserlogedincheck=new Subject<boolean>();
+  isUserlogedincheck = new Subject<boolean>();
   private subject = new Subject<any>();
   private userObj: any;
+  // tslint:disable-next-line: ban-types
   private userAfterLoggedObj: Object;
   private httpObj: any = {
     type: '',
@@ -21,21 +22,25 @@ export class CommonService {
     return 'https://api.rentatruck.shauryatechnosoft.com/masterdata/';
   }
 
-  //setIdToken(id: string) {
+  // setIdToken(id: string) {
   //  this.idToken = id;
-  //}
+  // }
 
+  // tslint:disable-next-line: ban-types
   getUserObj(): Object {
     return this.userObj;
   }
+  // tslint:disable-next-line: ban-types
   setUserObj(obj: Object) {
     this.userObj = obj;
     console.log(obj);
   }
 
+  // tslint:disable-next-line: ban-types
   getUserAfterLoggedObj(): Object {
     return this.userAfterLoggedObj;
   }
+  // tslint:disable-next-line: ban-types
   setUserAfterLoggedObj(obj: Object) {
     this.userAfterLoggedObj = obj;
     console.log(obj);
@@ -60,16 +65,16 @@ export class CommonService {
   }
 
   getHttp(): any {
-    let promise = new Promise((resolve, reject) => {
-      let temp: any = undefined;
-      !this.httpObj.options.params && (delete this.httpObj.options.params)
+    const promise = new Promise((resolve, reject) => {
+      let temp: any;
+      // tslint:disable-next-line: no-unused-expression
+      !this.httpObj.options.params && (delete this.httpObj.options.params);
       temp = this.http.request(this.httpObj.type, this.httpObj.url, this.httpObj.options);
       temp.toPromise().then(res => {
-        let resData: any = res;
-        if (resData.statusCode !== "200") {
-          //this.router.navigate(['/home']);
-        }
-        else {
+        const resData: any = res;
+        if (resData.statusCode !== '200') {
+          // this.router.navigate(['/home']);
+        } else {
           return resolve(resData);
         }
       });
@@ -78,6 +83,7 @@ export class CommonService {
     return promise;
   }
 
+  // tslint:disable-next-line: ban-types
   setHttp(type, url, isHeader: Boolean, params: any) {
     this.clearHttp();
     this.httpObj.type = type;
@@ -85,14 +91,13 @@ export class CommonService {
     if (isHeader) {
       this.httpObj.options.headers = new HttpHeaders({
         'Content-Type': 'application/json; charset=utf-8',
-        'Authorization': "bearer " + this.userObj.idToken,
-        'Accept': "application/json"
+        Authorization: 'bearer ' + this.userObj.idToken,
+        Accept: 'application/json'
       });
     }
     if (params !== false) {
       this.httpObj.options.params = params;
-    }
-    else {
+    } else {
       this.httpObj.options.params = false;
     }
   }

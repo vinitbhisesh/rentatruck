@@ -3,19 +3,17 @@ import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } fr
 import { Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 
-//@Injectable()
-//export class HttpServiceService implements HttpInterceptor {
+// @Injectable()
+// export class HttpServiceService implements HttpInterceptor {
   // intercept(
   //   req: HttpRequest<any>,
   //   next: HttpHandler
   // ): Observable<HttpEvent<any>> {
-  //   //debugger
   //   return next.handle(req).map(evt => {
   //     if (evt instanceof HttpResponse) {
-  //       debugger
   //       console.log('---> status:', evt.status);
   //       console.log('---> filter:', req.params.get('filter'));
   //     }
   //   });
   // }
-//}
+// }
